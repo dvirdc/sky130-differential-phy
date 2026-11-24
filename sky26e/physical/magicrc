@@ -1,0 +1,3 @@
+source /pdk/sky130A/libs.tech/magic/sky130A.magicrc
+# Match official TT precheck: retain implant-mask corrections on GDS import.
+gds maskhints yes

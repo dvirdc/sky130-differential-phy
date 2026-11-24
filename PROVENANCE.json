@@ -1,0 +1,13 @@
+{
+  "source_commit": "9e7a25e8635dfb594bdffb2d8d872ecba0faff75",
+  "source_checkout": "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy",
+  "gds_sha256": "809c431cd63fc6d6051d58ce6e96feceab01ba851b958ce50a1d4d3042cf82dd",
+  "source_snapshot_unchanged": true,
+  "root_artifact_sha256": {
+    "info.yaml": "955cdc2426801fb447277212834207af74f28abdfc36f345f2bef2395323d5b6",
+    "gds/tt_um_dvirdc_sky130_diff8.gds": "809c431cd63fc6d6051d58ce6e96feceab01ba851b958ce50a1d4d3042cf82dd",
+    "gds/tt_um_dvirdc_sky130_diff8.v": "d6af3829a1c035b240bb8caa37c4bc5693edc3c65d326cdebeb0def2bf3f9723",
+    "lef/tt_um_dvirdc_sky130_diff8.lef": "610fcc4544d83a83dd22afcd01c232048b7aa663e8e9e9ad1694d410a99bcd35",
+    "src/project.v": "0ab0f978728c81e5a62f6db2885768a01f842cf233b5612ffc8add5112cef00c"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "generated primitive cells only",
+  "generator_sha256": "93946873d13f8068fe4b70ad138630c497d077c7023097e1534b813a872e8773",
+  "files": {
+    "nfet_01v8_w24_l1.mag": "cb91316261d79140be47ab9f3b208d8fa7de11fcac105480c0138ea1c47de223",
+    "nfet_01v8_w2_l0p15.mag": "fd9292c2c6a53556d17a12d2e47f5a3c9f086958c5c507346eac49b31ccf32f6",
+    "nfet_01v8_w4_l0p15.mag": "8dfbc5bfaf38f747b0beeb8556360b6cce0adcd9374317c0f5717551a40ec35c",
+    "pfet_01v8_w12_l1.mag": "8f4364b61ee0874563db64a580e76aee22f0c3d4345c5f311dd799b51c19468c",
+    "pfet_01v8_w4_l0p15.mag": "a0edf4358fd91bf423c1bd705a2d21752eed29b3e57998ab7355566cbdc0b085",
+    "pfet_01v8_w8_l0p15.mag": "ed055aea9aa1b9fadacdb61c1196ea43fca38e0ececae7157a18f76b28023fab",
+    "res_high_po_0p35_w0p35_l1.mag": "08f3081cc082ee29419e1b105d5417d5f124f66b1080b51b3d6bd1ebcbe5c132",
+    "res_high_po_0p35_w0p35_l20.mag": "2387d70aa6e069c53353c805785a797f30e3b2223c7d6f335c73d517ce861329",
+    "res_high_po_0p35_w0p35_l28.mag": "5de3e60573126147eed8b4d79e1f335a6a6f52650a4d21e947809773bfef0896",
+    "nfet_01v8_w24_l1.spice": "602c7d41d922d3fbaefc189b6f411493d1c59afd30530c7bf953ba69195ba966",
+    "nfet_01v8_w2_l0p15.spice": "53c9db3d61f22ee7aef6d726809ed6970436f74ad7577c2579edb9f91caf74f8",
+    "nfet_01v8_w4_l0p15.spice": "9bcfb033bb2a5d25e3ca4d79aab6d58f13b97a835bc8104907539203398749fa",
+    "pfet_01v8_w12_l1.spice": "39970ac8dd8a4db02bc2447977924a9a1bfc009a4077e853d8f845b2d457519c",
+    "pfet_01v8_w4_l0p15.spice": "b1deaa344ea4b42125811c42f17914647bd2bd269548cb5f06fae26dc93ba0f7",
+    "pfet_01v8_w8_l0p15.spice": "79805a3e6fc74ff9630f5753b1d630e44d9ba10dd2452996fb6f56cb4cc07d2f",
+    "res_high_po_0p35_w0p35_l1.spice": "cb471317f405ebe7c9aba7cf96dc53cbf082ae4073221f6cf6b61e530eb3849e",
+    "res_high_po_0p35_w0p35_l20.spice": "d3d5e1f67a14362bd9fcc87884bb055dd01000f903ceced313296ff92f57c81d",
+    "res_high_po_0p35_w0p35_l28.spice": "2c76649a33ebba2706946d1a45ba7d59a01774ce8665aaf1f3b5d0b1f66ff532"
+  }
+}

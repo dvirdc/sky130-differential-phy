@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "version": 2,
+    "flow": "Classic"
+  },
+  "DESIGN_NAME": "diff8_digital",
+  "VERILOG_FILES": [
+    "dir::../rtl/diff8_uart_tx.v",
+    "dir::../rtl/diff8_uart_rx.v",
+    "dir::../rtl/diff8_digital.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 625,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": [
+    0,
+    0,
+    420,
+    205
+  ],
+  "PL_TARGET_DENSITY_PCT": 65,
+  "RT_MAX_LAYER": "met4",
+  "FP_PDN_VPITCH": 40,
+  "FP_PDN_HPITCH": 40,
+  "FP_PDN_VOFFSET": 10,
+  "FP_PDN_HOFFSET": 10
+}

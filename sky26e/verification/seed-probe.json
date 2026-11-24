@@ -1,0 +1,15 @@
+{
+  "seed_order": [
+    1,
+    1,
+    2
+  ],
+  "waveform_sha256": [
+    "3fac92b3522b14bfb047946ef978d9743f9ef05f4f67119b36fbde836ee7adf8",
+    "3fac92b3522b14bfb047946ef978d9743f9ef05f4f67119b36fbde836ee7adf8",
+    "6728aa57a24b40728c94a3537428cc30d3671dd112bd266d22e145b97af1dde7"
+  ],
+  "passed": true,
+  "method": "input-deck .option seed; 60 us transient",
+  "ngspice_issue": "https://sourceforge.net/p/ngspice/bugs/873/"
+}

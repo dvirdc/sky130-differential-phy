@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-database>
+ <description>SKY130 DRC runset</description>
+ <original-file/>
+ <generator>drc: script='tech-files/nwell_hvtp.drc'</generator>
+ <top-cell>tt_um_dvirdc_sky130_diff8</top-cell>
+ <tags>
+ </tags>
+ <categories>
+  <category>
+   <name>hvtp in nwell width</name>
+   <description>hvtp in nwell width: min. width of hvtp AND nwell 0.38um</description>
+   <categories>
+   </categories>
+  </category>
+ </categories>
+ <cells>
+  <cell>
+   <name>tt_um_dvirdc_sky130_diff8</name>
+   <variant/>
+   <layout-name/>
+   <references>
+   </references>
+  </cell>
+ </cells>
+ <items>
+ </items>
+</report-database>

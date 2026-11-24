@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "tests": 44,
+  "scope": "functional SKY130 HD mapped gates with uniform 1ns model delay; no SDF/STA or extracted analog",
+  "source_sha256": {
+    "rtl/diff8_uart_tx.v": "35154e34211bfba75af66cd5e097cdfc8fc19ded4716b19e8b261ad911ca10ba",
+    "rtl/diff8_uart_rx.v": "2519e9f6a533ec89008bae1749444dfa8936602187b313cba5368de7389c88ce",
+    "rtl/diff8_digital.v": "efdec5d361599cb96d39d6b73a7b563453102969b28a3c7f796a46a7b8f2e09b",
+    "rtl/tt_um_dvirdc_sky130_diff8.v": "561e5e8000173785bcbed99562b664b6e289580c8e2f6953ec1bab17fd9da5bd",
+    "sim/phy_behavioral.v": "c448b41f4f57cd394c28698d2eafdf50463935c678ecc0096d211604ec25b40d",
+    "sim/tb.sv": "fa19aa877851328db6d6eb3d49ff7fdcab9d4e63291117ff302d30b1da4c0daf"
+  },
+  "library_sha256": "8e78e14442062dba34d414fca6490b2f6b96038d4510d1438ca44fee31487135",
+  "netlist_sha256": "0762f30a1bc8f0bd0ea688bbedb304e9842af36bf02bcd645f6ecdb996d225b8"
+}

@@ -1,0 +1,33 @@
+{
+  "scope": "digital core global placement only; no integrated analog, CTS, detailed routing, signoff timing, or final DRC/LVS",
+  "passed_global_placement": true,
+  "die_area_um": [
+    420,
+    205
+  ],
+  "source_sha256": {
+    "rtl/diff8_digital.v": "efdec5d361599cb96d39d6b73a7b563453102969b28a3c7f796a46a7b8f2e09b",
+    "rtl/diff8_uart_rx.v": "2519e9f6a533ec89008bae1749444dfa8936602187b313cba5368de7389c88ce",
+    "rtl/diff8_uart_tx.v": "35154e34211bfba75af66cd5e097cdfc8fc19ded4716b19e8b261ad911ca10ba"
+  },
+  "config_sha256": "53d67ed8ca053ecc868e2f32a7f780bac58377c6099937c39836d46b9e334504",
+  "metrics": {
+    "timing__hold__ws__corner:nom_tt_025C_1v80": 0.1151982153386419,
+    "timing__setup__ws__corner:nom_tt_025C_1v80": 374.5456175665709,
+    "timing__hold__ws__corner:nom_ss_100C_1v60": 0.4602692246501937,
+    "timing__setup__ws__corner:nom_ss_100C_1v60": 374.40009841017167,
+    "timing__hold__ws__corner:nom_ff_n40C_1v95": -0.008403777911423962,
+    "timing__setup__ws__corner:nom_ff_n40C_1v95": 374.6061842310801,
+    "timing__hold__ws": -0.008403777911423962,
+    "timing__setup__ws": 374.40009841017167,
+    "design__core__area": 74525.2,
+    "design__instance__area__stdcell": 42544.6,
+    "design__instance__utilization": 0.570875,
+    "design__instance__utilization__stdcell": 0.570875
+  },
+  "warnings": [
+    "446 TIMESCALEMOD warnings in generated standard-cell blackboxes",
+    "generic fallback PNR and signoff SDC; not signoff constraints",
+    "PDN starts_with ignored with followpins"
+  ]
+}

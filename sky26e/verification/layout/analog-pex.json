@@ -1,0 +1,251 @@
+{
+  "passed": true,
+  "scope": "exact analog macro GDS RC extraction; 30 PVT loopback cases; assumed external switch/load; not full integrated top/post-fill",
+  "resistors": 750,
+  "capacitors": 276,
+  "active_and_pdk_resistor_devices": 29,
+  "pex_sha256": "11489d48ba20bf8967ec517f4fc4bed0d389ee42074d7b172709bf79c84b5c9a",
+  "gds_sha256": "acc38fbc1697f7d7d0da51c6a7c781a5b41329fd317c8f168a6c92b3632f49bb",
+  "results": [
+    {
+      "name": "tt_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11325921299999997,
+      "tx_diff_max_v": 0.11330321099999996,
+      "deck_sha256": "8a3eb5dcd04737d8697fe3a6f8a4fb3f8d4981f22e95ebb8983f6718a3616de9"
+    },
+    {
+      "name": "tt_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20534337200000008,
+      "tx_diff_max_v": 0.205410321,
+      "deck_sha256": "dfdadb2f8c0703f5a00c303dfd220268fb0dafb01826818ce529e8560a38d533"
+    },
+    {
+      "name": "tt_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13400650299999994,
+      "tx_diff_max_v": 0.13402450300000002,
+      "deck_sha256": "5cfd9793110e62ff8d39e3fe827ef819fd068f6a65f8adc23fe57aa379107ce4"
+    },
+    {
+      "name": "tt_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.24098974900000003,
+      "tx_diff_max_v": 0.24108161100000003,
+      "deck_sha256": "4d50b531fbad1e170910df9c4fbe6495ada4dbb93622a9ab2942338c296e3f36"
+    },
+    {
+      "name": "tt_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08803893299999999,
+      "tx_diff_max_v": 0.08805484699999999,
+      "deck_sha256": "b7e3a749e22b343d3e3791fe3f3681b62963d347a3cfafa7085db2512ac786fa"
+    },
+    {
+      "name": "tt_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.161376234,
+      "tx_diff_max_v": 0.1614134829999999,
+      "deck_sha256": "7fc77ea6ba9b20e8410aedc8fac37ac66b7f1a367c48f4c266d2384b369b993b"
+    },
+    {
+      "name": "ff_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11355718800000003,
+      "tx_diff_max_v": 0.11357346000000001,
+      "deck_sha256": "2d17236ef4b0a4b843d5503d18dacc07ea7e1f29f1f79dd5b1562f0d1ae6a258"
+    },
+    {
+      "name": "ff_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.206487211,
+      "tx_diff_max_v": 0.20656885600000008,
+      "deck_sha256": "65241c0419ab2e9b76fa59eb48af09761ddc33b9e749ee6800bfaf3a46ce7b1d"
+    },
+    {
+      "name": "ff_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13431284199999993,
+      "tx_diff_max_v": 0.13434950899999998,
+      "deck_sha256": "3acc50f6ae31a5599e6cf9d5cd15bda6b1a96b6a83bf94608b328b7e2b0aa33e"
+    },
+    {
+      "name": "ff_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.242126811,
+      "tx_diff_max_v": 0.2421871459999999,
+      "deck_sha256": "a7b34ee8ce6377bd40ac8f05c803fc8c417dbc2c8c4317aa46bdbf7ef96fd9ba"
+    },
+    {
+      "name": "ff_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08842846999999998,
+      "tx_diff_max_v": 0.08843771,
+      "deck_sha256": "5e21abceab9d084a5d1bf740fb7ce30d4305b86a90963c8dff0217ae406018fd"
+    },
+    {
+      "name": "ff_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.162429932,
+      "tx_diff_max_v": 0.16248018099999995,
+      "deck_sha256": "84907e54a5475054ecd15e5052dcd339094c77527e0caeaddf51b98bb70fe8d0"
+    },
+    {
+      "name": "ss_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11283552600000002,
+      "tx_diff_max_v": 0.11284949100000008,
+      "deck_sha256": "c1f1a689f9b6b7a07a81260a70f9c31906ab59c7bde30903f04f2dfd43ff21b5"
+    },
+    {
+      "name": "ss_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20368066699999998,
+      "tx_diff_max_v": 0.20372862999999997,
+      "deck_sha256": "47bbe7e071016678f88fef1a01d799d78df66bcf7bdd39bda4bc15418797073d"
+    },
+    {
+      "name": "ss_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.133549441,
+      "tx_diff_max_v": 0.13358488199999996,
+      "deck_sha256": "696d88a8ca322a49f5055154763a5cebb1030d2c17cd7f3c7de8d2481e770200"
+    },
+    {
+      "name": "ss_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.23925377399999992,
+      "tx_diff_max_v": 0.23933492900000009,
+      "deck_sha256": "ccc40596f1c2259464ab0b4c32e095ac225efac8e0f8f6e43600897a35dd20e3"
+    },
+    {
+      "name": "ss_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08764403600000004,
+      "tx_diff_max_v": 0.08766891200000004,
+      "deck_sha256": "ed429b9c209bf88bc73065479bef16f8ac32d14fcd7e7f6390ef893c6dd5303d"
+    },
+    {
+      "name": "ss_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.15992467999999993,
+      "tx_diff_max_v": 0.15996839800000007,
+      "deck_sha256": "67bc976ba8360b1f629fc94daec6c29b6cb578a282f1ae6ca5536ed2f7cfb715"
+    },
+    {
+      "name": "fs_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11342702500000001,
+      "tx_diff_max_v": 0.11345185700000004,
+      "deck_sha256": "8f3f7df283f66dfa11cb1a737fd5316642f32da94609872021d850499bb7ea3c"
+    },
+    {
+      "name": "fs_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.205948994,
+      "tx_diff_max_v": 0.206018928,
+      "deck_sha256": "ac32285de774bc3f5095bb3b2a5ee96bba56cf3e35f6ce7722a19a3ec06d9457"
+    },
+    {
+      "name": "fs_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13422877099999997,
+      "tx_diff_max_v": 0.13430905700000006,
+      "deck_sha256": "33833c3c541ed406e25bde14870d1def06e23ea76a17bf2abab0fd0da1f1df14"
+    },
+    {
+      "name": "fs_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.24178292200000007,
+      "tx_diff_max_v": 0.241911561,
+      "deck_sha256": "eb1f812ca707571907c7aa5b897fa3defc3ada6c244726bbfca557babddd7d7b"
+    },
+    {
+      "name": "fs_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08834335999999998,
+      "tx_diff_max_v": 0.08838122800000003,
+      "deck_sha256": "7b0662ff3e6e9f1f9f8880a72a05bf87a5d0b8a526d99e7ec01a722da0139f9e"
+    },
+    {
+      "name": "fs_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16155951899999998,
+      "tx_diff_max_v": 0.16165236399999994,
+      "deck_sha256": "12bc45bb74c9600b0cf1543f6d5f607212b6a99400dab8c90e789fe30e70d442"
+    },
+    {
+      "name": "sf_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11297280600000004,
+      "tx_diff_max_v": 0.11300483100000003,
+      "deck_sha256": "959fdeb370cd7afa94580d823a30b962b37981b18080b89be9e1ecab100f2001"
+    },
+    {
+      "name": "sf_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20417531899999997,
+      "tx_diff_max_v": 0.20421677699999996,
+      "deck_sha256": "2545160c232bdea8323303095d04e19d5ac005b47bfb55f37724be5fb14fbd31"
+    },
+    {
+      "name": "sf_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13367141999999999,
+      "tx_diff_max_v": 0.13369401800000003,
+      "deck_sha256": "e2964737479201a9f8ac792d8f5430e7353bb02d785c41ecf62236592441c408"
+    },
+    {
+      "name": "sf_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.23968407299999994,
+      "tx_diff_max_v": 0.23970319299999998,
+      "deck_sha256": "f1faf2c6f8810806ef3d3f428b5ad2464dac048d0aa4ee0be8d8173c9536e1f7"
+    },
+    {
+      "name": "sf_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.087808412,
+      "tx_diff_max_v": 0.08782221099999998,
+      "deck_sha256": "d514327a626b1494fd0a4e8eb44858747e92ac2b883ab052d14ca376cbc80f57"
+    },
+    {
+      "name": "sf_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16055073500000006,
+      "tx_diff_max_v": 0.16058473399999995,
+      "deck_sha256": "cbd810cb139631f8d3bf88bb378d8be176d660e94ed3daa3c2aadb49ee19e72f"
+    }
+  ]
+}

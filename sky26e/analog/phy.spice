@@ -1,0 +1,36 @@
+* SKY130 1.8V exploratory port; pre-layout schematic only. Dimensions are microns.
+* Use .option scale=1e-6 and the pinned SKY130 library. No GF180 evidence applies.
+.subckt inv a y vdd vss
+xn y a vss vss sky130_fd_pr__nfet_01v8 w=2 l=0.15
+xp y a vdd vdd sky130_fd_pr__pfet_01v8 w=4 l=0.15
+.ends
+.subckt tg a b en enb vdd vss
+xn a en b vss sky130_fd_pr__nfet_01v8 w=4 l=0.15
+xp a enb b vdd sky130_fd_pr__pfet_01v8 w=8 l=0.15
+.ends
+.subckt phy din boost rxp rxn txp txn dout vdd vss
+xi0 din dinb vdd vss inv
+xi1 dinb dp vdd vss inv
+xib boost boostb vdd vss inv
+* PDK high-poly resistors; dimensions require simulation and layout matching.
+xrp dp txp vss sky130_fd_pr__res_high_po_0p35 l=28
+xrn dinb txn vss sky130_fd_pr__res_high_po_0p35 l=28
+xrbp txp cm vss sky130_fd_pr__res_high_po_0p35 l=1
+xrbn txn cm vss sky130_fd_pr__res_high_po_0p35 l=1
+xrc1 vdd cm vss sky130_fd_pr__res_high_po_0p35 l=20
+xrc2 cm vss vss sky130_fd_pr__res_high_po_0p35 l=20
+* Second drive leg approximately doubles differential swing when boost=1.
+xtp dp ap boost boostb vdd vss tg
+xtn dinb an boost boostb vdd vss tg
+xrp2 ap txp vss sky130_fd_pr__res_high_po_0p35 l=28
+xrn2 an txn vss sky130_fd_pr__res_high_po_0p35 l=28
+* NMOS differential preamp with PMOS current mirror and resistive tail.
+xn1 n1 rxn tail vss sky130_fd_pr__nfet_01v8 w=24 l=1
+xn2 pre rxp tail vss sky130_fd_pr__nfet_01v8 w=24 l=1
+xp1 n1 n1 vdd vdd sky130_fd_pr__pfet_01v8 w=12 l=1
+xp2 pre n1 vdd vdd sky130_fd_pr__pfet_01v8 w=12 l=1
+xrt tail vss vss sky130_fd_pr__res_high_po_0p35 l=20
+xis pre q vdd vss inv
+xbuf q qb vdd vss inv
+xout qb dout vdd vss inv
+.ends phy

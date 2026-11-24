@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-24",
+  "target_shuttle": "ttsky26e",
+  "tools_commit": "7d2d2ef5261eb1df16d0bc342834d48a8a276881",
+  "template": "tt_analog_4x2.def",
+  "template_sha256": "304aa0ef67ff3f00d2cce329136f9bad1a6633e37cce58d059e09c20a8cbfc6d",
+  "die_um": [
+    682.64,
+    225.76
+  ],
+  "analog_pins": 4,
+  "used_ua": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "technical_support": "Official 4x2 DEF exists; current precheck selects it from tiles=4x2 and accepts first four connected analog pins. Official FAQ permits larger footprints with multiple-project charging.",
+  "commercial_condition": "4x2 exceeds the normal two-slot analog-project size; pricing is as multiple 1x2/2x2 projects including repeated pin charges. No purchase/reservation or shuttle-specific allocation approval obtained.",
+  "sources": [
+    "https://tinytapeout.com/faq/#what-is-an-analog-slot",
+    "https://tinytapeout.com/specs/analog/",
+    "https://github.com/TinyTapeout/tt-support-tools/blob/7d2d2ef5261eb1df16d0bc342834d48a8a276881/tech/sky130A/def/analog/tt_analog_4x2.def",
+    "https://github.com/TinyTapeout/tt-gds-action/blob/ttsky26e/precheck/action.yml"
+  ]
+}

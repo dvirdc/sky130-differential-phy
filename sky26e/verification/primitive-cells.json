@@ -1,0 +1,86 @@
+{
+  "scope": "individual generated primitive cells only; no connected PHY or integrated layout",
+  "cells": [
+    {
+      "cell": "nfet_01v8_w2_l0p15",
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w_um": 2,
+      "l_um": 0.15,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "pfet_01v8_w4_l0p15",
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w_um": 4,
+      "l_um": 0.15,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "nfet_01v8_w4_l0p15",
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w_um": 4,
+      "l_um": 0.15,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "pfet_01v8_w8_l0p15",
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w_um": 8,
+      "l_um": 0.15,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "nfet_01v8_w24_l1",
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w_um": 24,
+      "l_um": 1,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "pfet_01v8_w12_l1",
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w_um": 12,
+      "l_um": 1,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "res_high_po_0p35_w0p35_l28",
+      "model": "sky130_fd_pr__res_high_po_0p35",
+      "w_um": 0.35,
+      "l_um": 28,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "res_high_po_0p35_w0p35_l1",
+      "model": "sky130_fd_pr__res_high_po_0p35",
+      "w_um": 0.35,
+      "l_um": 1,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    },
+    {
+      "cell": "res_high_po_0p35_w0p35_l20",
+      "model": "sky130_fd_pr__res_high_po_0p35",
+      "w_um": 0.35,
+      "l_um": 20,
+      "drc_count": 0,
+      "extracted_model_found": true,
+      "tool_exit_code": 0
+    }
+  ]
+}

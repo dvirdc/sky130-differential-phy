@@ -1,0 +1,58 @@
+{
+  "status": "LOCAL_LAYOUT_CHECKS_PASS_NOT_SUBMISSION_READY",
+  "baseline_checkpoint": "85cf059682f8e0e3c3e95b3fe28ecce2affd72a5",
+  "target": "ttsky26e",
+  "tiles": "4x2",
+  "die_um": [
+    682.64,
+    225.76
+  ],
+  "analog_pins": 4,
+  "clock_hz": 1600000,
+  "gds_sha256": "809c431cd63fc6d6051d58ce6e96feceab01ba851b958ce50a1d4d3042cf82dd",
+  "pdk_revision": "0536d02d875c8f67dd7cca3902ac457e62f20005",
+  "precheck_tools_revision": "7d2d2ef5261eb1df16d0bc342834d48a8a276881",
+  "precheck_pass": 17,
+  "routed_tests_pass": 44,
+  "analog_macro_rc_cases_pass": 30,
+  "full_transistor_lvs": true,
+  "sta_corners": [
+    "max_ff_n40C_1v95",
+    "max_ss_100C_1v60",
+    "max_tt_025C_1v80",
+    "min_ff_n40C_1v95",
+    "min_ss_100C_1v60",
+    "min_tt_025C_1v80",
+    "nom_ff_n40C_1v95",
+    "nom_ss_100C_1v60",
+    "nom_tt_025C_1v80"
+  ],
+  "worst_setup_slack_ns": 505.60267093021923,
+  "worst_hold_slack_ns": 0.1261555895456512,
+  "slew_capacitance_setup_hold_violations": 0,
+  "antenna_violations": 0,
+  "tools": {
+    "magic_independent": "8.3.706",
+    "magic_openlane": "8.3.503",
+    "netgen": "1.5.287",
+    "openlane": "3.0.0.dev21",
+    "klayout_cli": "0.29.9",
+    "klayout_python": "0.30.14",
+    "ngspice": "46",
+    "iverilog": "12.0"
+  },
+  "notes": [
+    "Implementation used 1 ns / 0.10 pF margin targets; final signoff uses unchanged PDK library limits, all nine corners pass.",
+    "Resistor RPM-only ECO after routing; independent XOR proves every other layer identical; full exported GDS re-extracted and LVS matched.",
+    "Official unmodified precheck with KLayout 0.29.9 CLI; Python API 0.30.14. Official Nix now pins newer CLI for GF180-specific APIs; remote exact-version confirmation remains.",
+    "RC simulations cover the analog macro, not a full-chip transient or actual TT switch/package.",
+    "Source scope remains sky26e/; root GF180 artifacts and checkpoint branch retained."
+  ],
+  "remaining": [
+    "Confirm contiguous 4x2 analog allocation and accounting with Tiny Tapeout; nothing reserved.",
+    "Validate actual shuttle switch/pad/package load and mixed-signal noise/coupling; macro STA uses blackbox ports.",
+    "Prepare independent SKY candidate repository/root workflows and run exact-commit remote physical and Docs checks.",
+    "Validate controller firmware and final carrier/board pin map.",
+    "Shuttle post-fill/final integration checks and silicon characterization."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "gds_sha256": "acc38fbc1697f7d7d0da51c6a7c781a5b41329fd317c8f168a6c92b3632f49bb",
+  "independent_gds_drc_errors": 0,
+  "lvs": "Circuits match uniquely",
+  "pex_resistors": 750,
+  "pex_capacitors": 276,
+  "pex_sha256": "11489d48ba20bf8967ec517f4fc4bed0d389ee42074d7b172709bf79c84b5c9a"
+}

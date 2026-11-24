@@ -1,0 +1,14 @@
+{
+  "target_shuttle": "ttsky26e",
+  "pdk": "sky130A",
+  "pdk_revision": "0536d02d875c8f67dd7cca3902ac457e62f20005",
+  "area_provisional": "4x2",
+  "analog_pins": 4,
+  "gf180_baseline": "a4da4d7843a6ab020dc2eab5aceebfbcd3c6b9f6",
+  "stage": "local_integrated_layout_checks_pass",
+  "sky130_simulation": "PASS_56_SCHEMATIC_AND_30_MACRO_RC_CASES",
+  "sky130_layout": "PASS_17_PRECHECKS_FULL_LVS_NINE_CORNER_DIGITAL_STA_ANTENNA",
+  "submission_ready": false,
+  "sky130_rtl": "PASS_44_RTL_44_MAPPED_44_ROUTED_TESTS",
+  "layout_sha256": "809c431cd63fc6d6051d58ce6e96feceab01ba851b958ce50a1d4d3042cf82dd"
+}

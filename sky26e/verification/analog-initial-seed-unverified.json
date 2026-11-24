@@ -1,0 +1,21 @@
+{
+  "passed": false,
+  "cases": 56,
+  "passed_cases": 56,
+  "mismatch_seed_variation_and_repeatability": false,
+  "pdk_revision": "0536d02d875c8f67dd7cca3902ac457e62f20005",
+  "scope": "pre-layout schematic; MOS corner sweep, paired voltage/temperature extremes; typical resistor process; assumed switch/load; small mismatch sample only",
+  "unverified": [
+    "layout",
+    "DRC/LVS",
+    "PEX",
+    "actual TT switch/pad model",
+    "yield",
+    "noise immunity",
+    "post-fill"
+  ],
+  "source_sha256": {
+    "analog/phy.spice": "81619cc69e3f2104615e8fe94ac23d7015b70368b5ef8eddd7bb363171ef2d35",
+    "scripts/test_analog.py": "08cb923c9b9e4c04b67eb08d8bcdca10606f2c65d1c470106d355d8a40ea59dc"
+  }
+}

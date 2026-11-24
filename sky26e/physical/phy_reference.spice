@@ -1,0 +1,37 @@
+* Schematic reference with canonical macro and supply-port names.
+* SKY130 1.8V exploratory port; pre-layout schematic only. Dimensions are microns.
+* Use .option scale=1e-6 and the pinned SKY130 library. No GF180 evidence applies.
+.subckt inv a y VDPWR VGND
+xn y a VGND VGND sky130_fd_pr__nfet_01v8 w=2 l=0.15
+xp y a VDPWR VDPWR sky130_fd_pr__pfet_01v8 w=4 l=0.15
+.ends
+.subckt tg a b en enb VDPWR VGND
+xn a en b VGND sky130_fd_pr__nfet_01v8 w=4 l=0.15
+xp a enb b VDPWR sky130_fd_pr__pfet_01v8 w=8 l=0.15
+.ends
+.subckt sky130_diff_phy din boost rxp rxn txp txn dout VDPWR VGND
+xi0 din dinb VDPWR VGND inv
+xi1 dinb dp VDPWR VGND inv
+xib boost boostb VDPWR VGND inv
+* PDK high-poly resistors; dimensions require simulation and layout matching.
+xrp dp txp VGND sky130_fd_pr__res_high_po_0p35 l=28
+xrn dinb txn VGND sky130_fd_pr__res_high_po_0p35 l=28
+xrbp txp cm VGND sky130_fd_pr__res_high_po_0p35 l=1
+xrbn txn cm VGND sky130_fd_pr__res_high_po_0p35 l=1
+xrc1 VDPWR cm VGND sky130_fd_pr__res_high_po_0p35 l=20
+xrc2 cm VGND VGND sky130_fd_pr__res_high_po_0p35 l=20
+* Second drive leg approximately doubles differential swing when boost=1.
+xtp dp ap boost boostb VDPWR VGND tg
+xtn dinb an boost boostb VDPWR VGND tg
+xrp2 ap txp VGND sky130_fd_pr__res_high_po_0p35 l=28
+xrn2 an txn VGND sky130_fd_pr__res_high_po_0p35 l=28
+* NMOS differential preamp with PMOS current mirror and resistive tail.
+xn1 n1 rxn tail VGND sky130_fd_pr__nfet_01v8 w=24 l=1
+xn2 pre rxp tail VGND sky130_fd_pr__nfet_01v8 w=24 l=1
+xp1 n1 n1 VDPWR VDPWR sky130_fd_pr__pfet_01v8 w=12 l=1
+xp2 pre n1 VDPWR VDPWR sky130_fd_pr__pfet_01v8 w=12 l=1
+xrt tail VGND VGND sky130_fd_pr__res_high_po_0p35 l=20
+xis pre q VDPWR VGND inv
+xbuf q qb VDPWR VGND inv
+xout qb dout VDPWR VGND inv
+.ends sky130_diff_phy
