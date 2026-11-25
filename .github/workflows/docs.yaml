@@ -1,0 +1,23 @@
+# Official SKY analog template Docs action; private PDF artifact, no Pages.
+name: docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Build and upload the PDF datasheet
+        uses: TinyTapeout/tt-gds-action/docs@df73a1e7b52e940423ff55f9354b2b8140d38cb7 # ttsky26e
+        with:
+          pdk: sky130A
+          tools-ref: 7d2d2ef5261eb1df16d0bc342834d48a8a276881

@@ -1,0 +1,53 @@
+# Based on TinyTapeout/ttsky-analog-template (301590bc02ffeabc2bb176489de9db0818a4b958).
+# SKY26e actions; private artifacts only. Pages/viewer deployment is intentionally omitted.
+name: gds
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Read top module and verify candidate hashes
+        id: top_module
+        shell: bash
+        run: |
+          python3 - <<'PYTHON'
+          import hashlib, json, os
+          from pathlib import Path
+          info = json.loads(Path('info.yaml').read_text())
+          for name, expected in json.loads(Path('PROVENANCE.json').read_text())['root_artifact_sha256'].items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('TOP_MODULE=' + info['project']['top_module'] + '\n')
+          PYTHON
+      - name: Build GDS, OAS and PNG artifacts
+        uses: TinyTapeout/tt-gds-action/custom_gds@df73a1e7b52e940423ff55f9354b2b8140d38cb7 # ttsky26e
+        with:
+          top_module: ${{ steps.top_module.outputs.TOP_MODULE }}
+          gds_path: gds/${{ steps.top_module.outputs.TOP_MODULE }}.gds
+          lef_path: lef/${{ steps.top_module.outputs.TOP_MODULE }}.lef
+          verilog_path: gds/${{ steps.top_module.outputs.TOP_MODULE }}.v
+          pdk: sky130A
+          tools-ref: 7d2d2ef5261eb1df16d0bc342834d48a8a276881
+      - name: Require a generated PNG preview
+        run: test -s gds_render.png
+
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Run official SKY130 precheck
+        uses: TinyTapeout/tt-gds-action/precheck@df73a1e7b52e940423ff55f9354b2b8140d38cb7 # ttsky26e
+        with:
+          tools-ref: 7d2d2ef5261eb1df16d0bc342834d48a8a276881
