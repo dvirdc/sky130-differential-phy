@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "scope": "isolated optional RTL area experiment; no physical or timing qualification",
+  "baseline_mapped_area_um2": 32389.8144,
+  "trial_mapped_area_um2": 31058.5376,
+  "area_saved_um2": 1331.2767999999996,
+  "area_saved_percent": 4.110171128365588,
+  "rtl_tests": 44,
+  "mapped_tests": 44,
+  "snapshot_payload_flops": 192,
+  "snapshot_valid_flags": 1,
+  "read_mask_addresses": [
+    16,
+    43
+  ],
+  "snapshot_strobe": "bus_wr && bus_address==3 && bus_data==16",
+  "semantics": [
+    "Only snapshot payload asynchronous reset was removed; a single asynchronous-reset validity flag hides unspecified payload until first snapshot.",
+    "Before the first snapshot following reset/deselection, every snapshot address16..43 returns zero, including derived snap_bits.",
+    "A snapshot remains accepted regardless of BIST/transceiver activity, exactly as before.",
+    "Start, clear, send and configuration commands do not clear old snapshots or validity, matching the baseline.",
+    "Snapshot values and validity update with nonblocking assignments on the same clock edge; simultaneous SPI reads observe the previous snapshot, matching baseline behavior."
+  ],
+  "sha256": {
+    "build/snapshot_trial/baseline.v": "3c68ad1452199b820d4a9e9732ead0e4162d7204bb80581a686308aff3042d96",
+    "build/snapshot_trial/diff8_digital.v": "15692848297190c232e6965a21e8784126a62688673847f601fd562a75d955ce",
+    "build/snapshot_trial/mapped.v": "41ea6379e1d6eb42b11965f15266fb24caf5ea16e8657b7fcd8dc9e3003f0e1d",
+    "sim/tb.sv": "fa19aa877851328db6d6eb3d49ff7fdcab9d4e63291117ff302d30b1da4c0daf",
+    "sim/phy_behavioral.v": "c448b41f4f57cd394c28698d2eafdf50463935c678ecc0096d211604ec25b40d"
+  },
+  "production_rtl_matches_trial_start": true,
+  "physical_trials": [
+    {
+      "tag": "compact_snapshot",
+      "density_pct": 75,
+      "macro_halo_um": 4,
+      "vertical_max_displacement_um": 100,
+      "stage": "OpenROAD.ResizerTimingPostCTS",
+      "result": "FAIL_DETAILED_PLACEMENT",
+      "failed_instance_entries": 14,
+      "hold_buffers_inserted": 1211,
+      "hold_violating_endpoints_before_repair": 655,
+      "hold_wns_before_repair_ns": -0.274,
+      "hold_wns_after_repair_before_placement_ns": 0.101,
+      "cts_metrics": {
+        "design__core__area": 71348.4,
+        "design__instance__area__stdcell": 35714.3,
+        "design__instance__area__macros": 12600,
+        "design__instance__utilization": 0.677159,
+        "design__instance__utilization__stdcell": 0.607918,
+        "design__instance__count__class:sequential_cell": 660,
+        "design__instance__count__class:timing_repair_buffer": 28,
+        "design__instance__area__class:timing_repair_buffer": 362.848
+      }
+    },
+    {
+      "tag": "compact_snapshot_density70",
+      "density_pct": 70,
+      "macro_halo_um": 4,
+      "vertical_max_displacement_um": 100,
+      "grt_adjustment": 0.1,
+      "stage": "OpenROAD.GlobalRouting",
+      "result": "FAIL_CONGESTION",
+      "total_overflow": 43,
+      "max_horizontal_overflow": 5,
+      "max_vertical_overflow": 3,
+      "post_cts_metrics": {
+        "design__core__area": 71348.4,
+        "design__instance__area__stdcell": 47804.6,
+        "design__instance__area__macros": 12600,
+        "design__instance__utilization": 0.846614,
+        "design__instance__utilization__stdcell": 0.813717,
+        "design__instance__count__class:sequential_cell": 660,
+        "design__instance__count__class:timing_repair_buffer": 1235,
+        "design__instance__area__class:timing_repair_buffer": 12439.4
+      }
+    },
+    {
+      "tag": "compact_snapshot_03",
+      "resumed_from": "compact_snapshot_density70 postCTS",
+      "grt_adjustment": 0,
+      "global_routing_overflow": 0,
+      "stage": "OpenROAD.DetailedRouting",
+      "result": "SUPERSEDED_INTERRUPTED",
+      "last_reported_route_violations": 7283,
+      "reason": "Stopped on parent direction to prioritize production candidate using the official default hold uncertainty. Not a completed routing failure or pass."
+    }
+  ],
+  "physical_verified": false,
+  "note": "Production RTL unchanged. Isolated area/snapshot-reset experiment retained for reproducibility; final routing was intentionally interrupted as superseded.",
+  "supplemental_snapshot_reset_spi_reads": 1204,
+  "supplemental_44_regression_pass": true,
+  "supplemental_test_sha256": "c371c83e9b5f2f8d01562b547e863674c65fbaf3d7870d8960c425c0124824ed",
+  "status": "AREA_EXPERIMENT_ONLY_NOT_A_VERIFIED_LAYOUT"
+}

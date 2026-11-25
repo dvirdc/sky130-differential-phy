@@ -1,0 +1,53 @@
+{
+  "status": "LOCAL_LAYOUT_CHECKS_PASS_NOT_SUBMISSION_READY",
+  "target": "ttsky26e",
+  "tiles": "2x2",
+  "die_um": [
+    334.88,
+    225.76
+  ],
+  "analog_pins": 4,
+  "clock_hz": 1600000,
+  "run": "compact_hold025",
+  "gds_sha256": "3e3c5d49441ae6847526168564dae89b2dee7286302094004a529dab48d5b24d",
+  "pdk_revision": "0536d02d875c8f67dd7cca3902ac457e62f20005",
+  "precheck_pass": 17,
+  "routed_tests_pass": 44,
+  "analog_macro_rc_cases_pass": 30,
+  "full_transistor_lvs": true,
+  "sta_corners": [
+    "max_ff_n40C_1v95",
+    "max_ss_100C_1v60",
+    "max_tt_025C_1v80",
+    "min_ff_n40C_1v95",
+    "min_ss_100C_1v60",
+    "min_tt_025C_1v80",
+    "nom_ff_n40C_1v95",
+    "nom_ss_100C_1v60",
+    "nom_tt_025C_1v80"
+  ],
+  "setup_uncertainty_ns": 2,
+  "hold_uncertainty_ns": 0.25,
+  "clock_transition_ns": 2,
+  "worst_setup_slack_ns": 504.47506799838663,
+  "worst_hold_slack_ns": 0.10933637638071503,
+  "stdcell_area_um2": 39567.9,
+  "analog_area_um2": 12600,
+  "core_area_um2": 71348.4,
+  "digital_utilization": 0.673515,
+  "combined_core_occupancy": 0.731172,
+  "notes": [
+    "Full 32-bit public counters and byte-transceiver protocol retained.",
+    "Hold uncertainty uses the official SKY130 default of 0.25 ns; prior 4x2 used 0.5 ns hold uncertainty in total. Setup uncertainty remains 2 ns and clock transition remains 2 ns.",
+    "Actual library electrical limits and all physical acceptance checks remain enabled.",
+    "Macro RC simulations use assumed loads and do not qualify the shuttle switch/package, noise, mismatch or post-fill integration.",
+    "External-pin digital regression uses functional cell models with uniform 1 ns delay, not SDF simulation.",
+    "Original 4x2 layout and verification/layout evidence remain archived separately."
+  ],
+  "remaining": [
+    "Exact-commit remote artifact, precheck and Docs verification.",
+    "Actual shuttle/package/board load and noise validation.",
+    "Final carrier/controller firmware validation.",
+    "Shuttle post-fill/integration verification and silicon testing."
+  ]
+}

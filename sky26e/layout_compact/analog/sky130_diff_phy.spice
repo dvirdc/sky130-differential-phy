@@ -1,0 +1,70 @@
+* NGSPICE file created from sky130_diff_phy.ext - technology: sky130A
+
+.subckt nfet_01v8_w24_l1 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=6.96 pd=48.58 as=6.96 ps=48.58 w=24 l=1
+.ends
+
+.subckt res_high_po_0p35_w0p35_l28 B R1 R2
+X0 R1 R2 B sky130_fd_pr__res_high_po_0p35 l=28
+.ends
+
+.subckt res_high_po_0p35_w0p35_l1 B R1 R2
+X0 R1 R2 B sky130_fd_pr__res_high_po_0p35 l=1
+.ends
+
+.subckt pfet_01v8_w4_l0p15 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=1.16 pd=8.58 as=1.16 ps=8.58 w=4 l=0.15
+.ends
+
+.subckt nfet_01v8_w2_l0p15 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.58 pd=4.58 as=0.58 ps=4.58 w=2 l=0.15
+.ends
+
+.subckt res_high_po_0p35_w0p35_l20 B R1 R2
+X0 R1 R2 B sky130_fd_pr__res_high_po_0p35 l=20
+.ends
+
+.subckt nfet_01v8_w4_l0p15 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=1.16 pd=8.58 as=1.16 ps=8.58 w=4 l=0.15
+.ends
+
+.subckt pfet_01v8_w8_l0p15 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=2.32 pd=16.58 as=2.32 ps=16.58 w=8 l=0.15
+.ends
+
+.subckt pfet_01v8_w12_l1 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=3.48 pd=24.58 as=3.48 ps=24.58 w=12 l=1
+.ends
+
+.subckt sky130_diff_phy din boost rxp rxn txp txn dout VDPWR VGND
+Xxn1 VGND xp2/G xn2/S rxn nfet_01v8_w24_l1
+Xxrn2 VGND xrn2/R1 txn res_high_po_0p35_w0p35_l28
+Xxrbn VGND txn xrc2/R1 res_high_po_0p35_w0p35_l1
+Xxn2 VGND xp2/D xn2/S rxp nfet_01v8_w24_l1
+Xxout_xp VDPWR dout VDPWR xout_xp/G pfet_01v8_w4_l0p15
+Xxib_xn VGND xtp_xp/G VGND boost nfet_01v8_w2_l0p15
+Xxi0_xn VGND xrn/R1 VGND din nfet_01v8_w2_l0p15
+Xxrbp VGND txp xrc2/R1 res_high_po_0p35_w0p35_l1
+Xxib_xp VDPWR xtp_xp/G VDPWR boost pfet_01v8_w4_l0p15
+Xxi0_xp VDPWR xrn/R1 VDPWR din pfet_01v8_w4_l0p15
+Xxbuf_xn VGND xout_xp/G VGND xis_xp/D nfet_01v8_w2_l0p15
+Xxbuf_xp VDPWR xout_xp/G VDPWR xis_xp/D pfet_01v8_w4_l0p15
+Xxrc1 VGND VDPWR xrc2/R1 res_high_po_0p35_w0p35_l20
+Xxrc2 VGND xrc2/R1 VGND res_high_po_0p35_w0p35_l20
+Xxtp_xn VGND xrp/R1 xrp2/R1 boost nfet_01v8_w4_l0p15
+Xxi1_xn VGND xrp/R1 VGND xrn/R1 nfet_01v8_w2_l0p15
+Xxtp_xp VDPWR xrp/R1 xrp2/R1 xtp_xp/G pfet_01v8_w8_l0p15
+Xxi1_xp VDPWR xrp/R1 VDPWR xrn/R1 pfet_01v8_w4_l0p15
+Xxrn VGND xrn/R1 txn res_high_po_0p35_w0p35_l28
+Xxrp VGND xrp/R1 txp res_high_po_0p35_w0p35_l28
+Xxrt VGND xn2/S VGND res_high_po_0p35_w0p35_l20
+Xxtn_xn VGND xrn/R1 xrn2/R1 boost nfet_01v8_w4_l0p15
+Xxtn_xp VDPWR xrn/R1 xrn2/R1 xtp_xp/G pfet_01v8_w8_l0p15
+Xxis_xn VGND xis_xp/D VGND xp2/D nfet_01v8_w2_l0p15
+Xxis_xp VDPWR xis_xp/D VDPWR xp2/D pfet_01v8_w4_l0p15
+Xxp1 VDPWR xp2/G VDPWR xp2/G pfet_01v8_w12_l1
+Xxrp2 VGND xrp2/R1 txp res_high_po_0p35_w0p35_l28
+Xxp2 VDPWR xp2/D VDPWR xp2/G pfet_01v8_w12_l1
+Xxout_xn VGND dout VGND xout_xp/G nfet_01v8_w2_l0p15
+.ends
+

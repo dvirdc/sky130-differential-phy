@@ -49,7 +49,7 @@ for info in a.layer_infos():
         assert eco and (info.layer,info.datatype)==(86,20),f'Unexpected geometry change on {info}'
         changed.append(str(info))
     checks.append(str(info))
-raw=lef.read_text(); template=parse_def(str(root/'sky26e/physical/tt_analog_4x2.def'))
+raw=lef.read_text(); template=parse_def(str(root/'sky26e/physical/tt_analog_2x2.def'))
 pins={k:[tuple(v)] for k,v in template.pins.items()}
 for namep in ['VDPWR','VGND']:
     m=re.search(r'\bPIN '+namep+r'\s.*?\bEND '+namep+r'\b',raw,re.S);assert m

@@ -1,0 +1,100 @@
+Completing 100% with 9740 violations.                                           
+elapsed time = 00:01:15, memory = 1275.20 (MB).                                 
+[INFO DRT-0199]   Number of violations = 9740.                                  
+Viol/Layer        mcon   met1    via   met2   met3   met4                       
+Cut Spacing          9      0      0      0      0      0                       
+Metal Spacing        0    599      0    449    120      1                       
+Min Hole             0      1      0      0      0      0                       
+Short                0   6039      8   2135    319     60                       
+[INFO DRT-0267] cpu time = 00:03:35, elapsed time = 00:01:16, memory = 1275.20  
+(MB), peak = 1351.92 (MB)                                                       
+Total wire length = 189398 um.                                                  
+Total wire length on LAYER li1 = 0 um.                                          
+Total wire length on LAYER met1 = 72970 um.                                     
+Total wire length on LAYER met2 = 69482 um.                                     
+Total wire length on LAYER met3 = 32937 um.                                     
+Total wire length on LAYER met4 = 14008 um.                                     
+Total wire length on LAYER met5 = 0 um.                                         
+Total number of vias = 35078.                                                   
+Up-via summary (total 35078):                                                   
+                                                                                
+------------------------                                                        
+FR_MASTERSLICE        0                                                         
+li1    13633                                                                    
+met1    17381                                                                   
+met2     2943                                                                   
+met3     1121                                                                   
+met4        0                                                                   
+------------------------                                                        
+35078                                                                           
+                                                                                
+                                                                                
+[INFO DRT-0195] Start 3rd optimization iteration.                               
+Completing 10% with 9740 violations.                                            
+elapsed time = 00:00:00, memory = 1308.36 (MB).                                 
+Completing 20% with 9740 violations.                                            
+elapsed time = 00:00:03, memory = 1319.20 (MB).                                 
+Completing 30% with 9740 violations.                                            
+elapsed time = 00:00:12, memory = 1325.20 (MB).                                 
+Completing 40% with 9089 violations.                                            
+elapsed time = 00:00:19, memory = 1369.16 (MB).                                 
+Completing 50% with 9089 violations.                                            
+elapsed time = 00:00:30, memory = 1337.63 (MB).                                 
+Completing 60% with 8497 violations.                                            
+elapsed time = 00:01:25, memory = 1294.88 (MB).                                 
+Completing 70% with 8497 violations.                                            
+elapsed time = 00:01:28, memory = 1333.63 (MB).                                 
+Completing 80% with 8497 violations.                                            
+elapsed time = 00:01:44, memory = 1351.74 (MB).                                 
+Completing 90% with 8059 violations.                                            
+elapsed time = 00:02:06, memory = 1380.82 (MB).                                 
+Completing 100% with 7720 violations.                                           
+elapsed time = 00:03:19, memory = 1333.87 (MB).                                 
+[INFO DRT-0199]   Number of violations = 7720.                                  
+Viol/Layer        mcon   met1    via   met2   met3   met4                       
+Cut Spacing          8      0      0      0      0      0                       
+Metal Spacing        0    552      0    412    148      1                       
+Min Hole             0      1      0      0      0      0                       
+Short                0   4386      8   1814    327     63                       
+[INFO DRT-0267] cpu time = 00:06:18, elapsed time = 00:03:19, memory = 1336.93  
+(MB), peak = 1390.62 (MB)                                                       
+Total wire length = 189218 um.                                                  
+Total wire length on LAYER li1 = 0 um.                                          
+Total wire length on LAYER met1 = 67004 um.                                     
+Total wire length on LAYER met2 = 68030 um.                                     
+Total wire length on LAYER met3 = 38494 um.                                     
+Total wire length on LAYER met4 = 15689 um.                                     
+Total wire length on LAYER met5 = 0 um.                                         
+Total number of vias = 35994.                                                   
+Up-via summary (total 35994):                                                   
+                                                                                
+------------------------                                                        
+FR_MASTERSLICE        0                                                         
+li1    13625                                                                    
+met1    17334                                                                   
+met2     3743                                                                   
+met3     1292                                                                   
+met4        0                                                                   
+------------------------                                                        
+35994                                                                           
+                                                                                
+                                                                                
+[INFO DRT-0195] Start 4th optimization iteration.                               
+Completing 10% with 7720 violations.                                            
+elapsed time = 00:00:00, memory = 1336.93 (MB).                                 
+Completing 20% with 7720 violations.                                            
+elapsed time = 00:00:00, memory = 1354.23 (MB).                                 
+Completing 30% with 7720 violations.                                            
+elapsed time = 00:00:16, memory = 1398.72 (MB).                                 
+Completing 40% with 7456 violations.                                            
+elapsed time = 00:00:17, memory = 1378.98 (MB).                                 
+Completing 50% with 7456 violations.                                            
+elapsed time = 00:00:22, memory = 1430.22 (MB).                                 
+Completing 60% with 7433 violations.                                            
+elapsed time = 00:01:24, memory = 1379.75 (MB).                                 
+Completing 70% with 7433 violations.                                            
+elapsed time = 00:01:24, memory = 1417.78 (MB).                                 
+Completing 80% with 7433 violations.                                            
+elapsed time = 00:01:56, memory = 1322.08 (MB).                                 
+Completing 90% with 7283 violations.                                            
+elapsed time = 00:02:22, memory = 1357.23 (MB).                                 

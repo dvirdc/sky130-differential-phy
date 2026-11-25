@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Universal 32-bit combinational identities and guarded target-state induction step; not full-core formal equivalence",
+  "properties": [
+    "Saturating checked_bits equals min(8*checked_bytes,2^32-1) before and after increment/clear/reset",
+    "Coherent snapshot bits derive from snapshot bytes including saturation",
+    "target_active==target_count while running or potentially PASS is preserved by guarded control transitions",
+    "PASS predicate unchanged under the target invariant",
+    "Before a legal launch sent<target<=2^32-1, so the transmitted pattern index can use modulo8 state"
+  ],
+  "source_sha256": "c91c0118de3ce16718debbfeaaf9300eb137d356c03311c19e8d77ff711093fc",
+  "rtl_sha256": "3c68ad1452199b820d4a9e9732ead0e4162d7204bb80581a686308aff3042d96"
+}

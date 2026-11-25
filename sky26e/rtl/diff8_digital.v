@@ -10,21 +10,25 @@ module diff8_digital(input wire clk, rst_n, ena,
  wire tick16 = div_count==0;
  reg boost; reg [2:0] pattern;
  reg [7:0] tx_register, rx_register;
- reg [31:0] target_count, target_active;
+ reg [31:0] target_count;
  reg running, done, fail, command_error, overflow, rx_ready;
- reg [31:0] checked_bytes, checked_bits, error_bytes, error_bits;
+ reg [31:0] checked_bytes, error_bytes, error_bits;
+ // Every checked byte contributes eight payload bits; derive the saturated total.
+ wire [31:0] checked_bits=(|checked_bytes[31:29])?32'hffffffff:{checked_bytes[28:0],3'b000};
  reg [31:0] framing_errors, timeouts, overruns;
- reg [31:0] snap_bytes,snap_bits,snap_error_bytes,snap_error_bits;
+ reg [31:0] snap_bytes,snap_error_bytes,snap_error_bits;
+ wire [31:0] snap_bits=(|snap_bytes[31:29])?32'hffffffff:{snap_bytes[28:0],3'b000};
  reg [31:0] snap_framing,snap_timeouts,snap_overruns;
  reg [7:0] bad_expected,bad_actual;
  reg [1:0] bist_state;
  reg [9:0] wait_ticks; reg [5:0] gap_ticks;
  reg [7:0] tx_sequence, rx_sequence;
- reg [31:0] sent_bytes;
+ // Only the pattern index is needed; no run can send more than 2^32-1 frames.
+ reg [2:0] sent_bytes;
  reg tx_start; reg [7:0] tx_data;
  wire tx_busy, rx_busy, rx_valid, rx_frame_error; wire [7:0] rx_data;
  reg [19:0] heartbeat;
- wire passed = done && !fail && !overflow && target_active!=0 && checked_bytes==target_active;
+ wire passed = done && !fail && !overflow && target_count!=0 && checked_bytes==target_count;
  assign phy_boost = boost;
  diff8_uart_tx tx(.clk(clk),.reset_n(reset_n),.tick16(tick16),.start(tx_start),.data(tx_data),.serial(phy_tx),.busy(tx_busy));
  diff8_uart_rx rx(.clk(clk),.reset_n(reset_n),.tick16(tick16),.serial(phy_rx),.data(rx_data),.valid(rx_valid),.frame_error(rx_frame_error),.busy(rx_busy));
@@ -104,9 +108,9 @@ module diff8_digital(input wire clk, rst_n, ena,
  always @(posedge clk or negedge reset_n) begin
   if(!reset_n) begin
    baud_div<=1;boost<=0;pattern<=0;tx_register<=8'ha5;rx_register<=0;
-   target_count<=32;target_active<=0;running<=0;done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;
-   checked_bytes<=0;checked_bits<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
-   snap_bytes<=0;snap_bits<=0;snap_error_bytes<=0;snap_error_bits<=0;snap_framing<=0;snap_timeouts<=0;snap_overruns<=0;
+   target_count<=32;running<=0;done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;
+   checked_bytes<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
+   snap_bytes<=0;snap_error_bytes<=0;snap_error_bits<=0;snap_framing<=0;snap_timeouts<=0;snap_overruns<=0;
    bad_expected<=0;bad_actual<=0;bist_state<=0;wait_ticks<=0;gap_ticks<=0;
    tx_sequence<=8'ha5;rx_sequence<=8'ha5;sent_bytes<=0;tx_start<=0;tx_data<=0;
   end else begin
@@ -126,10 +130,10 @@ module diff8_digital(input wire clk, rst_n, ena,
     else case(bist_state)
      1:if(!tx_busy && !tx_start) begin
       tx_data<=pattern_byte(pattern,sent_bytes[2:0],tx_sequence,tx_register);tx_start<=1;
-      tx_sequence<=lfsr_next(tx_sequence);sent_bytes<=inc32(sent_bytes);wait_ticks<=0;bist_state<=2;
+      tx_sequence<=lfsr_next(tx_sequence);sent_bytes<=sent_bytes+3'd1;wait_ticks<=0;bist_state<=2;
      end
      2:if(rx_valid)begin
-      checked_bytes<=inc32(checked_bytes);checked_bits<=addsmall(checked_bits,8);
+      checked_bytes<=inc32(checked_bytes);
       if(&checked_bytes || checked_bits>32'hfffffff7)overflow<=1;
       rx_sequence<=lfsr_next(rx_sequence);
       if(differences!=0)begin
@@ -137,7 +141,7 @@ module diff8_digital(input wire clk, rst_n, ena,
        if(&error_bytes || error_bits>32'hffffffff-{28'b0,differences})overflow<=1;
        bad_expected<=expected;bad_actual<=rx_data;fail<=1;
       end
-      if(checked_bytes==target_active-1'b1)begin running<=0;done<=1;bist_state<=0;end
+      if(checked_bytes==target_count-1'b1)begin running<=0;done<=1;bist_state<=0;end
       else begin gap_ticks<=0;bist_state<=3;end
      end else if(tick16)begin
       if(wait_ticks==511)begin timeouts<=inc32(timeouts);if(&timeouts)overflow<=1;fail<=1;done<=1;running<=0;bist_state<=0;end
@@ -151,24 +155,24 @@ module diff8_digital(input wire clk, rst_n, ena,
     if(bus_address==3)begin
      case(bus_data)
       1:if(!running && !tx_busy && !rx_busy && !tx_start && target_count!=0)begin
-       running<=1;done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;target_active<=target_count;
-       checked_bytes<=0;checked_bits<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
+       running<=1;done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;
+       checked_bytes<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
        bad_expected<=0;bad_actual<=0;tx_sequence<=8'ha5;rx_sequence<=8'ha5;sent_bytes<=0;wait_ticks<=0;gap_ticks<=0;bist_state<=1;
       end else begin command_error<=1;fail<=1;end
       2:if(!running && !tx_busy && !tx_start)begin
-       done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;target_active<=0;
-       checked_bytes<=0;checked_bits<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
+       done<=0;fail<=0;command_error<=0;overflow<=0;rx_ready<=0;
+       checked_bytes<=0;error_bytes<=0;error_bits<=0;framing_errors<=0;timeouts<=0;overruns<=0;
       end else begin command_error<=1;fail<=1;end
-      4:if(!running && !tx_busy && !tx_start)begin tx_data<=tx_register;tx_start<=1;done<=0;target_active<=0;end
+      4:if(!running && !tx_busy && !tx_start)begin tx_data<=tx_register;tx_start<=1;done<=0;end
         else begin command_error<=1;fail<=1;end
       8:begin running<=0;done<=1;fail<=1;bist_state<=0;end
-      16:begin snap_bytes<=checked_bytes;snap_bits<=checked_bits;snap_error_bytes<=error_bytes;snap_error_bits<=error_bits;
+      16:begin snap_bytes<=checked_bytes;snap_error_bytes<=error_bytes;snap_error_bits<=error_bits;
        snap_framing<=framing_errors;snap_timeouts<=timeouts;snap_overruns<=overruns;end
       default:begin command_error<=1;fail<=1;end
      endcase
     end else if(running || tx_busy || rx_busy || tx_start)begin command_error<=1;fail<=1;end
     else begin
-     done<=0;target_active<=0;
+     done<=0;
      case(bus_address)
      2:if(bus_data<=1)boost<=bus_data[0];else begin command_error<=1;fail<=1;end
      4:tx_register<=bus_data;

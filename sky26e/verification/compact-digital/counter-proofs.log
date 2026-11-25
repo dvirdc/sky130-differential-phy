@@ -1,0 +1,297 @@
+
+-- Executing script file `/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/build/area/counter-proofs.ys' --
+
+1. Executing Verilog-2005 frontend: /Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv
+Parsing formal SystemVerilog input from `/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv' to AST representation.
+Generating RTLIL representation for module `\counter_reduction_properties'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \counter_reduction_properties
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \counter_reduction_properties
+Removed 0 unused modules.
+Module counter_reduction_properties directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29 in module counter_reduction_properties.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 20 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$93'.
+Creating decoders for process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$87'.
+Creating decoders for process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+     1/5: $assert$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$82_EN
+     2/5: $assert$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:49$80_EN
+     3/5: $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:42$53_EN
+     4/5: $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$50_EN
+     5/5: $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:40$47_EN
+Creating decoders for process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+     1/5: $1\next_fail[0:0]
+     2/5: $1\next_done[0:0]
+     3/5: $1\next_running[0:0]
+     4/5: $1\next_active[31:0]
+     5/5: $1\next_target[31:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:16$2.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$93'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:16$6.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$93'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:16$6.n' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$93'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:12$1.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$87'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:12$5.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$87'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:12$5.n' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$87'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:37$3.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:37$3.n' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:38$4.$result' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+No latch inferred for signal `\counter_reduction_properties.\sat_bits$func$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:38$4.n' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+No latch inferred for signal `\counter_reduction_properties.\next_target' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+No latch inferred for signal `\counter_reduction_properties.\next_active' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+No latch inferred for signal `\counter_reduction_properties.\next_running' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+No latch inferred for signal `\counter_reduction_properties.\next_done' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+No latch inferred for signal `\counter_reduction_properties.\next_fail' from process `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$93'.
+Removing empty process `counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:0$87'.
+Found and cleaned up 4 empty switches in `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+Removing empty process `counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:36$30'.
+Found and cleaned up 1 empty switch in `\counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+Removing empty process `counter_reduction_properties.$proc$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:22$29'.
+Cleaned up 5 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+<suppressed ~4 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter_reduction_properties..
+Removed 0 unused cells and 53 unused wires.
+<suppressed ~1 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module counter_reduction_properties...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter_reduction_properties'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter_reduction_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter_reduction_properties.
+    New ctrl vector for $pmux cell $procmux$110: { $auto$opt_reduce.cc:137:opt_pmux$150 $auto$opt_reduce.cc:137:opt_pmux$148 }
+    New ctrl vector for $pmux cell $procmux$117: { $auto$opt_reduce.cc:137:opt_pmux$154 $auto$opt_reduce.cc:137:opt_pmux$152 }
+    New ctrl vector for $pmux cell $procmux$126: { $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$49_Y $auto$opt_reduce.cc:137:opt_pmux$156 }
+    New ctrl vector for $pmux cell $procmux$134: { $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$49_Y $auto$opt_reduce.cc:137:opt_pmux$158 }
+  Optimizing cells in module \counter_reduction_properties.
+Performed a total of 4 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter_reduction_properties'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter_reduction_properties..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \counter_reduction_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \counter_reduction_properties.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter_reduction_properties'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter_reduction_properties..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 bits (of 32) from port B of cell counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:14$15 ($add).
+Removed top 31 bits (of 32) from port B of cell counter_reduction_properties.$ge$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:40$44 ($ge).
+Removed top 29 bits (of 32) from port B of cell counter_reduction_properties.$le$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:40$45 ($le).
+Removed top 3 bits (of 4) from port B of cell counter_reduction_properties.$eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$49 ($eq).
+Removed top 1 bits (of 4) from port B of cell counter_reduction_properties.$eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:42$52 ($eq).
+Removed top 31 bits (of 32) from port B of cell counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$83 ($add).
+Removed top 29 bits (of 32) from port Y of cell counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$83 ($add).
+Removed top 29 bits (of 32) from port A of cell counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$83 ($add).
+Removed top 2 bits (of 3) from port B of cell counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$85 ($add).
+Removed top 1 bits (of 4) from port B of cell counter_reduction_properties.$procmux$111_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell counter_reduction_properties.$procmux$112_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell counter_reduction_properties.$procmux$113_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell counter_reduction_properties.$procmux$120_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell counter_reduction_properties.$procmux$122_CMP0 ($eq).
+Removed top 29 bits (of 32) from wire counter_reduction_properties.$add$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$83_Y.
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter_reduction_properties..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module counter_reduction_properties.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\counter_reduction_properties'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \counter_reduction_properties..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== counter_reduction_properties ===
+
+   Number of wires:                 97
+   Number of wire bits:           1001
+   Number of public wires:          32
+   Number of public wire bits:     624
+   Number of ports:                 16
+   Number of port bits:            236
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 87
+     $add                            3
+     $check                         10
+     $eq                            15
+     $ge                             1
+     $gt                             1
+     $le                             1
+     $logic_and                      8
+     $logic_not                      6
+     $logic_or                       5
+     $lt                             1
+     $mux                           19
+     $ne                             1
+     $pmux                           4
+     $reduce_and                     1
+     $reduce_bool                    2
+     $reduce_or                      9
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module counter_reduction_properties...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up SAT problem:
+Final constraint equation: { } = { }
+Imported 107 cells to SAT database.
+Import constraint from assume cell: \running when $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:42$53_EN.
+Import constraint from assume cell: $ne$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$51_Y when $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:41$50_EN.
+Import constraint from assume cell: $logic_not$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:40$48_Y when $assume$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:40$47_EN.
+Import constraint from assume cell: \invariant when 1'1.
+Import proof for assert: $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:50$86_Y when $assert$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:49$80_EN.
+Import proof for assert: $ne$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:49$81_Y when $assert$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:49$80_EN.
+Import proof for assert: $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:44$78_Y when 1'1.
+Import proof for assert: $logic_or$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:43$60_Y when 1'1.
+Import proof for assert: $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:38$42_Y when 1'1.
+Import proof for assert: $eq$/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/counter_reduction_properties.sv:37$38_Y when 1'1.
+Import show expression: \active
+Import show expression: \bytes
+Import show expression: \checked
+Import show expression: \clear_counts
+Import show expression: \done
+Import show expression: \event_kind
+Import show expression: \fail
+Import show expression: \increment
+Import show expression: \overflow
+Import show expression: \replacement_target
+Import show expression: \reset
+Import show expression: \running
+Import show expression: \sent
+Import show expression: \snapshot
+Import show expression: \snapshot_bytes
+Import show expression: \target
+
+Solving problem with 5678 variables and 15339 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+End of script. Logfile hash: 973906ce44, CPU: user 0.07s system 0.00s, MEM: 24.66 MB peak
+Yosys 0.53+39 (git sha1 388955031, g++ 17.0.0 -fPIC -O3)
+Time spent: 73% 1x sat (0 sec), 7% 5x opt_clean (0 sec), ...

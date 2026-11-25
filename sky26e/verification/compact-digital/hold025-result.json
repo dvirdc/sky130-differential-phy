@@ -1,0 +1,163 @@
+{
+  "run": "compact_hold025",
+  "flow": "Classic",
+  "exit_code": 0,
+  "status": "LOCAL_PHYSICAL_FLOW_PASS",
+  "die_um": [
+    334.88,
+    225.76
+  ],
+  "die_area_exact_um2": 75602.5088,
+  "timing_envelope": {
+    "period_ns": 625,
+    "setup_uncertainty_ns": 2,
+    "hold_uncertainty_ns": 0.25,
+    "clock_transition_ns": 2,
+    "change_from_compact_library": "Only hold uncertainty 0.5 ns to 0.25 ns; remaining constraints/checks unchanged."
+  },
+  "stdcell_count": 4098,
+  "stdcell_area_um2": 39567.9,
+  "macro_area_um2": 12600,
+  "core_area_um2": 71348.4,
+  "digital_utilization": 0.673515,
+  "combined_core_occupancy": 0.731172,
+  "timing_repair_buffer_count": 275,
+  "timing_repair_buffer_area_um2": 2841.48,
+  "checks": {
+    "route__drc_errors": 0,
+    "magic__drc_error__count": 0,
+    "klayout__drc_error__count": 0,
+    "design__xor_difference__count": 0,
+    "design__lvs_error__count": 0,
+    "antenna__violating__nets": 0,
+    "antenna__violating__pins": 0,
+    "design__critical_disconnected_pin__count": 0,
+    "design__power_grid_violation__count": 0
+  },
+  "sta_corners": [
+    {
+      "corner": "max_ff_n40C_1v95",
+      "setup_slack_ns": 518.0531421588443,
+      "hold_slack_ns": 0.11601425704039624,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "max_ss_100C_1v60",
+      "setup_slack_ns": 504.47506799838663,
+      "hold_slack_ns": 0.880986974974129,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "max_tt_025C_1v80",
+      "setup_slack_ns": 514.7278589048605,
+      "hold_slack_ns": 0.31064174334329686,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "min_ff_n40C_1v95",
+      "setup_slack_ns": 518.2124174229969,
+      "hold_slack_ns": 0.10933637638071503,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "min_ss_100C_1v60",
+      "setup_slack_ns": 504.87763310214416,
+      "hold_slack_ns": 0.8654801564837193,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "min_tt_025C_1v80",
+      "setup_slack_ns": 514.9624517011338,
+      "hold_slack_ns": 0.30196695998389733,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "nom_ff_n40C_1v95",
+      "setup_slack_ns": 518.137440951399,
+      "hold_slack_ns": 0.11230150460759221,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "nom_ss_100C_1v60",
+      "setup_slack_ns": 504.6830012304602,
+      "hold_slack_ns": 0.8727165903628864,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    },
+    {
+      "corner": "nom_tt_025C_1v80",
+      "setup_slack_ns": 514.851209127277,
+      "hold_slack_ns": 0.3059138029480641,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "slew_violations": 0,
+      "cap_violations": 0
+    }
+  ],
+  "analog_pin_connections": [
+    ".rxp(ua[2]),",
+    ".rxn(ua[3]),",
+    ".txp(ua[0]),",
+    ".txn(ua[1]),"
+  ],
+  "disconnected_pin_note": "17 noncritical intentionally unused top ports: ua[4:7], ui_in[3:7], uio_in[0:7]; zero critical disconnected pins.",
+  "sha256": {
+    "sky26e/rtl/diff8_digital.v": {
+      "sha256": "3c68ad1452199b820d4a9e9732ead0e4162d7204bb80581a686308aff3042d96",
+      "bytes": 10757
+    },
+    "sky26e/physical/compact_hold025.json": {
+      "sha256": "3250051dbe81f75ab538c19c626a4700515b1e3d7459e4541637e1afa1b241ae",
+      "bytes": 2501
+    },
+    "sky26e/physical/signoff_hold025.sdc": {
+      "sha256": "f08e3b3c3c8d8e4934db4eb0d9dc898153b5fed2c23184c2f07fa739c0e9e234",
+      "bytes": 829
+    },
+    "sky26e/physical/runs/compact_hold025/60-klayout-streamout/tt_um_dvirdc_sky130_diff8.klayout.gds": {
+      "sha256": "96d2435903f310e3e080858ccbca6b67e449abea68070fa7e8d6458ea4960649",
+      "bytes": 5403470
+    },
+    "sky26e/physical/runs/compact_hold025/61-magic-writelef/tt_um_dvirdc_sky130_diff8.lef": {
+      "sha256": "38285ee4294dd05fb170f9dfec526125032a10b97afecc365dc7f2a6424ff2ca",
+      "bytes": 15094
+    },
+    "sky26e/physical/runs/compact_hold025/54-openroad-fillinsertion/tt_um_dvirdc_sky130_diff8.pnl.v": {
+      "sha256": "c61ea74e8e8d832eb758bdfe485fc2fa9016898b8080b739a59014278b5f2ad2",
+      "bytes": 1259658
+    },
+    "sky26e/verification/compact-digital/hold025-final-metrics.json": {
+      "sha256": "474fc899cb5115e8b1935cd9edcb190abaa641a7730ac6e6c109928c020ffbc0",
+      "bytes": 17782
+    }
+  },
+  "scope_notes": [
+    "This is the OpenLane source-flow result. Independently exported candidate LVS, official prechecks and routed functional tests are managed separately by the parent task.",
+    "Analog macro is black-boxed for digital STA; these results do not characterize analog timing/noise/load limits.",
+    "This does not establish actual external-clock jitter/slew, shuttle/package effects, post-fill integration, or silicon performance.",
+    "Prior compact_library_02 and snapshot routes were intentionally interrupted as superseded experiments, not terminal failed flows."
+  ]
+}

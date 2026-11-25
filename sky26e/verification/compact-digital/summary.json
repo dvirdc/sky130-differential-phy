@@ -1,0 +1,24 @@
+{
+  "rtl_sha256": "3c68ad1452199b820d4a9e9732ead0e4162d7204bb80581a686308aff3042d96",
+  "rtl_tests": 44,
+  "mapped_tests": 44,
+  "native_mapped_area_before_um2": 37664.8736,
+  "native_mapped_area_after_um2": 32389.8144,
+  "area_reduction_percent": 14.005248646314318,
+  "sequential_area_before_um2": 19653.8496,
+  "sequential_area_after_um2": 16525.8496,
+  "reduced_state_bits": 125,
+  "changes": [
+    "Derive saturated checked-bit count from checked bytes",
+    "Derive snapshot-bit count from coherent snapshot bytes",
+    "Remove target_active copy because target_count is guarded and DONE invalidates on changes",
+    "Keep only modulo8 sent pattern index; each new run resets the index"
+  ],
+  "protocol_changed": false,
+  "limitations": [
+    "Native mapped-area comparison uses the same mapping flow/library; OpenLane area is different and must be measured separately",
+    "SAT proofs cover full-width arithmetic and guarded transition identities, not whole-core equivalence",
+    "A whole-core Yosys equivalence attempt left 29 nodes unproven; no full-core equivalence claim is made",
+    "Physical 2x2 checks are in progress separately"
+  ]
+}

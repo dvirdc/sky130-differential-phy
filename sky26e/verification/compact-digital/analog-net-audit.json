@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "netlist": "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy/sky26e/physical/runs/integrated_04/54-openroad-fillinsertion/tt_um_dvirdc_sky130_diff8.pnl.v",
+      "sha256": "e8ef7987df8b63fbc7ff5b3d0c3ec2b827b80679f3a8c04fade108a600cc8741",
+      "direct_connections": {
+        "txp": 0,
+        "txn": 1,
+        "rxp": 2,
+        "rxn": 3
+      },
+      "only_four_analog_net_references": true
+    },
+    {
+      "netlist": "sky26e/physical/runs/compact_02/37-openroad-resizertimingpostcts/tt_um_dvirdc_sky130_diff8.pnl.v",
+      "sha256": "86514ff899bd3c3dfd1f50ff50b220eb45a30a2f5ff3c4b56055bf7cdfc2a412",
+      "direct_connections": {
+        "txp": 0,
+        "txn": 1,
+        "rxp": 2,
+        "rxn": 3
+      },
+      "only_four_analog_net_references": true
+    },
+    {
+      "netlist": "sky26e/physical/runs/compact_04/03-openroad-repairdesignpostgrt/tt_um_dvirdc_sky130_diff8.pnl.v",
+      "sha256": "f8cd809c6cb237dad282b6126d2499ad98f5513bd4c8a5c0f6a331507d6cef4f",
+      "direct_connections": {
+        "txp": 0,
+        "txn": 1,
+        "rxp": 2,
+        "rxn": 3
+      },
+      "only_four_analog_net_references": true
+    }
+  ],
+  "note": "compact_03 failed repair stage emitted no powered netlist; its input compact_02 postCTS and later compact_04 postGRT were audited"
+}

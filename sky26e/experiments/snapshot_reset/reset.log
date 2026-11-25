@@ -1,0 +1,47 @@
+PASS 1 SPI identity and reset
+PASS 2 external analog-boundary loopback pattern=0 boost=0
+PASS 3 external analog-boundary loopback pattern=1 boost=0
+PASS 4 external analog-boundary loopback pattern=2 boost=0
+PASS 5 external analog-boundary loopback pattern=3 boost=0
+PASS 6 external analog-boundary loopback pattern=4 boost=0
+PASS 7 external analog-boundary loopback pattern=0 boost=1
+PASS 8 external analog-boundary loopback pattern=1 boost=1
+PASS 9 external analog-boundary loopback pattern=2 boost=1
+PASS 10 external analog-boundary loopback pattern=3 boost=1
+PASS 11 external analog-boundary loopback pattern=4 boost=1
+PASS 12 one-bit corruption boost=0
+PASS 13 bad framing boost=0
+PASS 14 external fault=1 boost=0
+PASS 15 external fault=2 boost=0
+PASS 16 external fault=3 boost=0
+PASS 17 external fault=5 boost=0
+PASS 18 one-bit corruption boost=1
+PASS 19 bad framing boost=1
+PASS 20 external fault=1 boost=1
+PASS 21 external fault=2 boost=1
+PASS 22 external fault=3 boost=1
+PASS 23 external fault=5 boost=1
+PASS 24 normal user-byte mode boost=0
+PASS 25 normal user-byte mode boost=1
+PASS 26 independent RX clock factor=0.98
+PASS 27 independent RX clock factor=1.00
+PASS 28 independent RX clock factor=1.02
+PASS 29 normal receive overrun
+PASS 30 zero-length cannot falsely PASS
+PASS 31 invalid divider
+PASS 32 active config guard and abort
+PASS 33 reset during transmission
+PASS 34 project deselection
+PASS 35 clear and restart
+PASS 36 all 255 PRBS bytes independently decoded at TX pins
+PASS 37 no stale PASS after boost change
+PASS 38 mid-test disconnect boost=0
+PASS 39 25 kbit/s divider boost=0
+PASS 40 mid-test disconnect boost=1
+PASS 41 25 kbit/s divider boost=1
+PASS 42 RX-busy start rejected boost=0
+PASS 43 RX-busy start rejected boost=1
+PASS 44 truncated control transaction
+SNAPSHOT_RESET_READS=1204
+ALL_PASS tests=44
+sky26e/build/snapshot_trial/tb_snapshot_reset.sv:181: $finish called at 577221250000 (1ps)

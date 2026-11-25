@@ -1,12 +1,12 @@
 # SKY26e differential byte transceiver and self-test
 
-Status: RTL implemented and verified with a behavioral PHY, including a SKY130 mapped-gate regression. A SKY130 transistor schematic and primitive layouts exist. This is not yet an integrated or qualified SKY130 chip. The existing root circuit, GDS/LEF, reports, info.yaml and workflows remain GF180 reference material at a4da4d7843a6ab020dc2eab5aceebfbcd3c6b9f6. They must not be submitted to SKY26e or described as SKY130 verification.
+Status: complete SKY130 2×2 physical flow and independent exported-GDS checks pass. The full byte transceiver, PHY and 32-bit self-test interface are implemented. See verification/STATUS.md for exact evidence and qualification limits. The development repository root remains GF180 reference material and must not be submitted as SKY130.
 
 ## Target and scope
 
 Target TTSKY26e, published close date 2026-11-30. User reports 15 analog slots and 211 tiles available on 2026-11-24; no slot has been reserved or purchased by this agent. Focus only on the differential project. IR, FSK and microphone projects are out of scope.
 
-Working area budget: one 4x2 mixed-signal macro (eight tiles) and four analog pins. The initial 2x2 goal is not established: a 300 x 205 um digital-core trial exceeded the configured placement density; a 420 x 205 um digital-core trial passed global placement. The complete analog macro, clock tree, routing and frame still need integration. A smaller frame is an optimization contingent on those results. Confirm slot accounting and available contiguous area in the shuttle app; no allocation is reserved.
+Implemented area: one 2×2 analog frame (four tiles), 334.88 × 225.76 µm, and four analog pins. Digital utilization is 67.3515%, and total core occupancy including the 140 × 90 µm PHY is 73.1172%. The original verified 4×2 candidate remains archived. Confirm contiguous allocation with Tiny Tapeout; no allocation is reserved.
 
 Preserve a separate, unchanged GF180 checkout. SKY130 sign-off must use the SKY26e pinned PDK 0536d02d875c8f67dd7cca3902ac457e62f20005. Official tt-gds-action ttsky26e resolves to df73a1e7b52e940423ff55f9354b2b8140d38cb7 as checked on 2026-11-24. No Pages or public publishing.
 
@@ -55,9 +55,9 @@ Integrate the digital controller and analog macro in the same custom-GDS design.
 
 ## Implementation and tool status
 
-The digital implementation includes independently clocked UART reception, five BIST patterns, saturating counters, explicit timeout/framing/overrun flags, and SPI control. Forty-four external-pin tests pass at RTL and against synthesized SKY130 HD cells with uniform 1 ns model delays. Neither run models extracted analog behavior or routed timing.
+The digital implementation includes independently clocked UART reception, five BIST patterns, saturating counters, explicit timeout/framing/overrun flags, and SPI control. Forty-four external-pin tests pass at RTL and against synthesized SKY130 HD cells with uniform 1 ns model delays. Neither run models extracted analog behavior or routed timing. The compact integrated layout additionally passes all 44 tests against its actual routed netlist; nine-corner STA independently checks timing.
 
-The exact SKY26e PDK is installed separately from the older native PDK. Native ngspice 46 runs the schematic. Magic 8.3.706 was built from official commit 1d42dfcdf6cd91df7a59198477324c2ca78ba439 in an isolated container and loads this PDK. Nine generated primitive cell types pass local Magic DRC after outward gate-contact M1 landing-pad extensions; this does not establish connected-PHY DRC, LVS or qualification. The native OpenLane install has an incompatible x86_64 libparse extension on this ARM Mac. An official ARM64 OpenLane 3.0.0.dev21 tool archive is staged on host disk and mounted read-only into the container because the Docker data disk is full.
+Earlier tool bring-up: The exact SKY26e PDK is installed separately from the older native PDK. Native ngspice 46 runs the schematic. Magic 8.3.706 was built from official commit 1d42dfcdf6cd91df7a59198477324c2ca78ba439 in an isolated container and loads this PDK. Nine generated primitive cell types pass local Magic DRC after outward gate-contact M1 landing-pad extensions; this does not establish connected-PHY DRC, LVS or qualification. The native OpenLane install has an incompatible x86_64 libparse extension on this ARM Mac. An official ARM64 OpenLane 3.0.0.dev21 tool archive is staged on host disk and mounted read-only into the container because the Docker data disk is full.
 
 See verification/STATUS.md for checkpoint evidence, hashes and outstanding gates. Build products and transient simulation waves are in the ignored build/ directory. Root GF180 files remain historical reference only.
 

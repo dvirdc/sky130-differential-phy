@@ -1,0 +1,29 @@
+{
+  "scope": "isolated area/functional experiment; no physical qualification",
+  "areas_um2": {
+    "baseline": 32389.8144,
+    "trial": 31058.5376
+  },
+  "results": {
+    "rtl": {
+      "tests": 44,
+      "passed": true
+    },
+    "mapped": {
+      "tests": 44,
+      "passed": true
+    },
+    "reset": {
+      "tests": 44,
+      "passed": true,
+      "zero_snapshot_byte_reads": 1204
+    }
+  },
+  "inputs_sha256": {
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/experiments/snapshot_reset/baseline.v": "3c68ad1452199b820d4a9e9732ead0e4162d7204bb80581a686308aff3042d96",
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/experiments/snapshot_reset/diff8_digital.v": "15692848297190c232e6965a21e8784126a62688673847f601fd562a75d955ce",
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/experiments/snapshot_reset/tb_snapshot_reset.sv": "c371c83e9b5f2f8d01562b547e863674c65fbaf3d7870d8960c425c0124824ed",
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/tb.sv": "fa19aa877851328db6d6eb3d49ff7fdcab9d4e63291117ff302d30b1da4c0daf",
+    "/Users/dvirdc/Projects/sky130-phys/toolchain/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib": "8e78e14442062dba34d414fca6490b2f6b96038d4510d1438ca44fee31487135"
+  }
+}

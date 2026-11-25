@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "independent final GDS import, full transistor/resistor LVS, analog PHY explicitly included",
+  "gds_sha256": "3e3c5d49441ae6847526168564dae89b2dee7286302094004a529dab48d5b24d",
+  "extracted_spice_sha256": "f8002dcf7945a004a858c1fa1d1dfe63c1dcefe62be489e91b027e7651c502a7",
+  "reference_spice_sha256": "5f03e8a0e7084a99328e1e9d2ec6b0fea7208abb2141ad0bbbc372f43db17695",
+  "lvs_report_sha256": "eb0adbd5a0e4c666b9773bdb9c3a4b991b4f30340301765ae668197882ca914c"
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-database>
+ <description>SKY130 DRC runset</description>
+ <original-file/>
+ <generator>drc: script='tech-files/nwell_lvtn.drc'</generator>
+ <top-cell>tt_um_dvirdc_sky130_diff8</top-cell>
+ <tags>
+ </tags>
+ <categories>
+  <category>
+   <name>lvtn.10</name>
+   <description>lvtn.10: min. enclosure of lvtn by nwell 0.38um</description>
+   <categories>
+   </categories>
+  </category>
+ </categories>
+ <cells>
+  <cell>
+   <name>tt_um_dvirdc_sky130_diff8</name>
+   <variant/>
+   <layout-name/>
+   <references>
+   </references>
+  </cell>
+ </cells>
+ <items>
+ </items>
+</report-database>

@@ -1,0 +1,302 @@
+{
+  "passed": true,
+  "scope": "compact analog macro only; not integrated 2x2 top-level or final shuttle qualification",
+  "macro_um": [
+    140,
+    90
+  ],
+  "macro_area_um2": 12600,
+  "device_counts": {
+    "mos": 20,
+    "high_poly_resistors": 9
+  },
+  "pdk_revision": "0536d02d875c8f67dd7cca3902ac457e62f20005",
+  "tools": {
+    "magic": "8.3.706",
+    "netgen": "1.5.287",
+    "klayout_cli": "0.29.9",
+    "ngspice": "46"
+  },
+  "independent_gds_drc_errors": 0,
+  "lvs": "Circuits match uniquely",
+  "official_drc": {
+    "feol": {
+      "errors": 0,
+      "report_sha256": "39be0827e1890a06ef5f5830ce0ef5a2f903865686456b55bc71159b2517a645"
+    },
+    "beol": {
+      "errors": 0,
+      "report_sha256": "ff400d303fd9bcf91ca122d25f484c796534be4c2904a479148968663f8ab5cb"
+    }
+  },
+  "rc": {
+    "resistors": 745,
+    "capacitors": 275
+  },
+  "pvt_cases_passed": 30,
+  "tx_differential_ranges_v": {
+    "0": [
+      0.0873068119999999,
+      0.134004986
+    ],
+    "1": [
+      0.15967527400000003,
+      0.24209967
+    ]
+  },
+  "sha256": {
+    "build/physical/phy-v2/sky130_diff_phy.gds": "9cdb937639268a3c03dcf4604462ea396e9333e4ed7dd2a8c633efdb710c2c30",
+    "build/physical/phy-v2/pex/phy_pex.spice": "b89693e0ecda1318546c8932b89fb7a0ec4d82730268fe55cf9a53837dbcca11",
+    "physical/phy_reference.spice": "5f03e8a0e7084a99328e1e9d2ec6b0fea7208abb2141ad0bbbc372f43db17695",
+    "scripts/test_phy_pex.py": "62ffb3ec6ed4493111b299740fa2e8dd8bc8807e3849a91b7bb3538ac87390d2",
+    "build/tools/tech-files/sky130A_mr.drc": "86e259de63a31934e59f6eebfdb201ad039ab63ae80ad88282d63db5621d1969",
+    "build/physical/phy-v2/reimport/lvs.rpt": "5e1164c56603740b221fb68092bb14f0b3adb3a3649f102c5cdd7553ed969125"
+  },
+  "cases": [
+    {
+      "name": "tt_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.112906901,
+      "tx_diff_max_v": 0.11294043600000003,
+      "deck_sha256": "2e9d5e542352703425ff741442fb793e97ca426fb069e7da1c74ea6a2220f3c2"
+    },
+    {
+      "name": "tt_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20515162800000009,
+      "tx_diff_max_v": 0.20522344800000003,
+      "deck_sha256": "e1fa91f26e41d38ec9f1ddc5fd00c44f0ff86b87de39a5e9c63b5b7502d651e0"
+    },
+    {
+      "name": "tt_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.133677983,
+      "tx_diff_max_v": 0.1336893589999999,
+      "deck_sha256": "7c052286d6e656b898fea6294272107ee83f4936afd5d739b8c126a443b16748"
+    },
+    {
+      "name": "tt_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.24086430300000006,
+      "tx_diff_max_v": 0.2409434789999999,
+      "deck_sha256": "9e47fb8290c83201e36d5827af590207143a12a6d6b7bc3af17844758020270f"
+    },
+    {
+      "name": "tt_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08771630600000002,
+      "tx_diff_max_v": 0.08772342999999994,
+      "deck_sha256": "1485c388bb73c6c6f3c4bcd754adacf66a43ac1e8611d373e51f32f60cae235c"
+    },
+    {
+      "name": "tt_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16113610099999998,
+      "tx_diff_max_v": 0.161155033,
+      "deck_sha256": "f5a98524b15f57f31aea1f873a602631f587ab2b47ea7a238bf7542b7d56b342"
+    },
+    {
+      "name": "ff_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.113210747,
+      "tx_diff_max_v": 0.11325859599999999,
+      "deck_sha256": "74baf530d8a3e1030b2f932c89f532c4123d9522479f67b8b151b49bbada3cc6"
+    },
+    {
+      "name": "ff_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20628848499999997,
+      "tx_diff_max_v": 0.20635102299999997,
+      "deck_sha256": "bbf6a8177387b9026bce1fc3fee0417b5b0a5efcbc85d11f712bfcb8154a38d6"
+    },
+    {
+      "name": "ff_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13396176799999993,
+      "tx_diff_max_v": 0.134004986,
+      "deck_sha256": "6f53f28321b8d239ca5082ead82714428e03d6c4a24a7c040a4bdfd758c77b0b"
+    },
+    {
+      "name": "ff_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.24201836599999993,
+      "tx_diff_max_v": 0.24209967,
+      "deck_sha256": "0bde319a773d336c3f8575d03e2ace6ea4f8c93299230bd3d9041ee3da2f2a94"
+    },
+    {
+      "name": "ff_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08809895599999995,
+      "tx_diff_max_v": 0.08811936899999995,
+      "deck_sha256": "7c63fcbfc7b1c340da52ae460d3b8d82ac540ddcb93dc6c6cadf3e7efbc87618"
+    },
+    {
+      "name": "ff_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16218892500000004,
+      "tx_diff_max_v": 0.16220250199999997,
+      "deck_sha256": "ec8a0eb2715a74b241d7cf45b1ce1f5b77c7663f524a22ee82fff128d6b8817a"
+    },
+    {
+      "name": "ss_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11251421300000009,
+      "tx_diff_max_v": 0.11253444099999999,
+      "deck_sha256": "086ea1b9b174f11e90b1e4d2a4be3c3aa425e3a21220512c50ee23747edf1161"
+    },
+    {
+      "name": "ss_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20349448599999997,
+      "tx_diff_max_v": 0.20353252199999994,
+      "deck_sha256": "e40dc3a5f9abefa7bd570f290cb97d036f5092a2c6ce1f4eaad2730d353e82a4"
+    },
+    {
+      "name": "ss_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13322399500000004,
+      "tx_diff_max_v": 0.13327231400000006,
+      "deck_sha256": "6503e59ce641ab46e7e45295afc1e35fd3661e5216fec1f0cf56d4ce9644e8ff"
+    },
+    {
+      "name": "ss_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.23912171100000001,
+      "tx_diff_max_v": 0.23918454600000005,
+      "deck_sha256": "fb52d2b69171161941ca5915d491e3d0bab83de96b445371093496a839644ffc"
+    },
+    {
+      "name": "ss_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.0873068119999999,
+      "tx_diff_max_v": 0.08732276900000002,
+      "deck_sha256": "6ac9fe1fee1eecc80128f4b3c1796a3dfc6149739883455820520a474d3b57ca"
+    },
+    {
+      "name": "ss_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.15967527400000003,
+      "tx_diff_max_v": 0.15970995899999996,
+      "deck_sha256": "5e8f8ee41a0b76bc2a5153858e3db982b354395df4ae20380f3c3111ced2f9e1"
+    },
+    {
+      "name": "fs_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11306582500000006,
+      "tx_diff_max_v": 0.11309635400000007,
+      "deck_sha256": "da6edd712e0bda7881afeeb64595b76d193c7bb7c083e611552028d9b3966046"
+    },
+    {
+      "name": "fs_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.205773894,
+      "tx_diff_max_v": 0.20582254100000008,
+      "deck_sha256": "93f7ddb0f079dcca6e3eadd1d74e87770fef91a846ee669f83dbcc9378ff2a48"
+    },
+    {
+      "name": "fs_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.133868051,
+      "tx_diff_max_v": 0.13390940799999995,
+      "deck_sha256": "83bedc0f8518e172d334e58d996ff2e1c5dd2fa79e043ee33ede7fea4416d6f9"
+    },
+    {
+      "name": "fs_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.2416902179999999,
+      "tx_diff_max_v": 0.24176858699999992,
+      "deck_sha256": "52d48967d3946d79cc380d084370f51cac71283eb4a15778c03224d67ffb277b"
+    },
+    {
+      "name": "fs_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.08802408900000003,
+      "tx_diff_max_v": 0.08804124700000004,
+      "deck_sha256": "dd707327208c6153fe5d0c19a2e1bb55f44b5a6d389d8cdd53b9b6757ff9861a"
+    },
+    {
+      "name": "fs_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16132347699999994,
+      "tx_diff_max_v": 0.16139364600000006,
+      "deck_sha256": "efc9cec5ee568d8e085d6bbfd5d0c2a1611c1546119638b495d1d99fcf0023a6"
+    },
+    {
+      "name": "sf_27_1.8_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.11263044300000002,
+      "tx_diff_max_v": 0.11267091600000001,
+      "deck_sha256": "3b5ceaf1c013e2603e35ae4421b8fda30907cc3ffaa10b898baa04a1a659aa73"
+    },
+    {
+      "name": "sf_27_1.8_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.20405021600000006,
+      "tx_diff_max_v": 0.2040754050000001,
+      "deck_sha256": "0e21dd54f75c6feb5eac8b24e9017bc38628696bb593f2a4b6ad9b6937d2fd34"
+    },
+    {
+      "name": "sf_-40_1.95_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.13332585399999997,
+      "tx_diff_max_v": 0.13334075300000015,
+      "deck_sha256": "0c14ae822a48ff86543e86567af7abf13ae8fd099432c9805205fb025ec2a08c"
+    },
+    {
+      "name": "sf_-40_1.95_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.23961333499999993,
+      "tx_diff_max_v": 0.23963173700000007,
+      "deck_sha256": "ca862183acb4724e70065e6c068ea96f0f6d38ab99bbe6fb347b1a872b7a6722"
+    },
+    {
+      "name": "sf_125_1.62_b0",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.087473307,
+      "tx_diff_max_v": 0.087493143,
+      "deck_sha256": "10ab0624b1641d3c20f42be2da15b10b2aefab3d4f738ae078cef94e514c2e76"
+    },
+    {
+      "name": "sf_125_1.62_b1",
+      "passed": true,
+      "bad_bit_samples": [],
+      "tx_diff_min_v": 0.16028547800000004,
+      "tx_diff_max_v": 0.16035620000000006,
+      "deck_sha256": "85fe5f0be9584661550b3f7aca728de9c4e09edc292b99607a51b12dc792fc55"
+    }
+  ],
+  "limitations": [
+    "Assumed 1000 ohm external loopback leg and 20 pF receive load; actual TT switch/package not simulated",
+    "Five MOS corners at three paired supply/temperature values, not a full Cartesian sweep",
+    "No mismatch, noise/coupling or post-fill qualification in this compact-layout sweep"
+  ]
+}

@@ -5,7 +5,7 @@
     "description": "1.8 V custom differential 8N1 transceiver with on-chip pattern checking; SKY130 layout candidate",
     "language": "Analog",
     "clock_hz": 1600000,
-    "tiles": "4x2",
+    "tiles": "2x2",
     "analog_pins": 4,
     "uses_vapwr": false,
     "top_module": "tt_um_dvirdc_sky130_diff8",

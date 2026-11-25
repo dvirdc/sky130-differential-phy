@@ -4,6 +4,7 @@ from pathlib import Path
 import subprocess,sys,json
 root=Path(__file__).resolve().parents[2];toolchain=root.parent/'toolchain'
 custom=sys.argv[1:2]==['--python']
+if not custom: (root/'sky26e/build/tools/tt/precheck/reports').mkdir(parents=True,exist_ok=True)
 rel=None if custom else Path(sys.argv[1]).resolve().relative_to(root)
 config=json.loads((toolchain/'openlane/config.json').read_text())['config']
 nix_path=next(v[5:] for v in config['Env'] if v.startswith('PATH='))

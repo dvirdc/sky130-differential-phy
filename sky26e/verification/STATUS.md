@@ -1,45 +1,39 @@
-# SKY26e local layout checkpoint — 2026-11-24
+# SKY26e 2×2 local layout checkpoint — 2026-11-25
 
-Local layout checks pass. This is not submission approval or silicon qualification. The isolated SKY130 candidate is in [../layout](../layout/README.md); repository-root GF180 results remain separate.
-
-## Current evidence
+The compact candidate passes the complete physical flow and independent exported-GDS checks. It occupies four tiles and retains the full 32-bit register/counter interface, byte transceiver and loopback self-test. This is a checked layout candidate; shuttle integration and silicon qualification remain.
 
 | Check | Result |
 |---|---|
-| Official 4×2 analog template | 682.64 × 225.76 µm, four used analog pins |
-| Unmodified TT precheck | 17/17 pass |
-| Independent exact-GDS transistor LVS | Unique match; PHY explicitly includes 20 MOS and 9 resistors |
+| Official 2×2 analog frame | 334.88 × 225.76 µm; four analog pins |
+| Digital standard-cell area | 39,567.9 µm²; 67.3515% of core excluding the analog macro |
+| Analog macro | 140 × 90 µm; 12,600 µm² |
+| Combined core occupancy | 73.1172% of 71,348.4 µm² |
+| Complete physical flow | Pass; routing, antenna, Magic/KLayout DRC and LVS clear |
+| Official exported-GDS precheck | 17/17 pass |
+| Independent exported-GDS transistor LVS | Unique match; PHY includes 20 MOS and 9 resistors, no black box |
 | Actual routed digital netlist | 44/44 external-pin tests pass |
 | Extracted analog macro RC simulation | 30/30 loopback cases pass |
-| Digital STA | Nine corners pass setup/hold and library slew/capacitance limits |
-| Worst setup / hold slack | +505.603 ns / +0.126 ns at a 625 ns clock period |
-| Antenna / disconnected power | Zero violations |
+| Final digital STA | Nine corners pass setup, hold and library slew/capacitance limits |
+| Worst setup / hold slack | +504.475068 ns / +0.109336 ns |
 
-The GDS hash, source/artifact hashes, individual reports, tool versions, and scope limits are in [layout/summary.json](layout/summary.json) and [layout/sha256.json](layout/sha256.json). GDS SHA-256: `809c431cd63fc6d6051d58ce6e96feceab01ba851b958ce50a1d4d3042cf82dd`.
+Exact GDS SHA-256: `3e3c5d49441ae6847526168564dae89b2dee7286302094004a529dab48d5b24d`. See [compact summary](compact-layout/summary.json), [artifact hashes](compact-layout/sha256.json), [full flow audit](compact-digital/hold025-result.json), and [layout package](../layout_compact/README.md).
 
-The 30 extracted cases cover five MOS corners × three paired temperature/supply points × both boost settings. The pairings are 27 °C/1.8 V, −40 °C/1.95 V, and 125 °C/1.62 V; this is not a Cartesian temperature/voltage sweep. Each case checks 120 bit-center decisions from twelve 8N1 bytes. The macro extraction has 750 resistance and 276 capacitance elements. TX differential magnitude across these cases ranges approximately 88–242 mV, including both boost states. These are model results, not silicon guarantees.
+## Timing envelope and reductions
 
-Routed digital tests use functional standard-cell models with uniform 1 ns delays and a behavioral analog boundary. They exercise normal byte transmission, self-test patterns, PRBS, corrupted data/framing, disconnect/stuck/invalid inputs, asynchronous source baud offsets, reset/deselection, overrun, SPI faults, and stale-PASS invalidation. They are not SDF or whole-chip analog simulations. Analog timing is absent from STA and checked separately in SPICE.
+Clock period is 625 ns (1.6 MHz). Hold uncertainty is 0.25 ns, the official SKY130 default; the earlier 4×2 candidate used 0.5 ns total. Setup uncertainty remains 2 ns and clock transition remains 2 ns. This is an explicit change in the timing envelope, not a claim of closure under the previous hold margin. See [pinned official source evidence](compact-digital/hold025-experiment.md).
 
-## Earlier preserved evidence
+The analog devices retain their sizes and connectivity in a more compact layout. Digital optimization removes 125 redundant state bits without changing the public protocol. Targeted arithmetic/transition proofs and RTL/mapped regressions pass; whole-core formal equivalence is not claimed. The optional snapshot-reset experiment was not adopted.
 
-Checkpoint `85cf059` on `sky26e-port` preserves 44 RTL tests, 44 mapped-gate tests, 56 schematic cases and placement experiments. The schematic matrix includes 30 loopback cases, 15 receiver common-mode cases, ten mismatch samples and one repeated seed. The mismatch seed repeatability repair and per-case provenance remain recorded in `analog*.json`. The expanded 30-case RC sweep does not repeat the receiver common-mode or mismatch matrix; five schematic seeds are not yield qualification.
+## Verification scope
 
-The current branch adds connected macro layout, full integration, routed checks and evidence. The historical GF180 root and original GF180 checkout remain unchanged.
+The 30 analog RC cases cover five MOS corners × three paired temperature/supply points × two boost settings. They use the compact macro's 745 resistance and 275 capacitance elements, assumed 1 kΩ loopback legs and 20 pF receive load. TX differential magnitude is approximately 87–242 mV across those cases. Actual shuttle switch/pad/package loads, mismatch, digital coupling/noise and post-fill integration are not qualified by this sweep.
 
-## Physical-check details
+The 44 routed digital tests use functional standard-cell models with uniform 1 ns delay and a behavioral PHY boundary; they are not SDF or whole-chip transistor simulations. Analog timing is checked separately in SPICE and is not included in digital STA. Independent final-GDS LVS includes the analog devices explicitly.
 
-A resistor RPM mask overlap was corrected without changing resistor W/L, contacts, or conductive geometry. The exported GDS differs from the routed design only on layer 86/20. Full exact-GDS LVS and all prechecks were run after this correction. GDS PATH conversion to polygons is independently checked by geometric XOR. Exported LEF pin rectangles are checked against both real GDS metal and pin layers.
+The complete physical flow uses OpenLane 3.0.0.dev21, pinned SKY130 PDK `0536d02d875c8f67dd7cca3902ac457e62f20005`, and final library electrical limits. Independent Magic is 8.3.706, Netgen 1.5.287. Official local precheck uses pinned TT tools `7d2d2ef5261eb1df16d0bc342834d48a8a276881`, KLayout CLI 0.29.9 and Python API 0.30.14. Remote official checks and artifact generation are recorded on each exact commit in the private repository's Actions runs.
 
-Implementation used tighter 1 ns / 0.10 pF margin targets. Final signoff uses the original PDK-library limits; all nine corners pass. The stricter-target implementation run's deferred errors are retained in its logs and are not claimed as a successful one-command flow. Future runs use the corrected macro and separate implementation/signoff constraints directly.
+## Preserved evidence and remaining work
 
-The pinned PDK is `0536d02d875c8f67dd7cca3902ac457e62f20005`; TT tools are `7d2d2ef5261eb1df16d0bc342834d48a8a276881`. Independent Magic is 8.3.706 and Netgen is 1.5.287. The unmodified precheck passed with KLayout CLI 0.29.9 and Python API 0.30.14. Current TT Nix pins a newer CLI for GF180-specific deck APIs; no remote exact-version result is claimed for this SKY candidate.
+The [4×2 checkpoint](STATUS_4X2.md), `layout/` and `verification/layout/` remain intact, with source checkpoint `9e7a25e8635dfb594bdffb2d8d872ecba0faff75`. They qualify that older candidate only. The earlier source and schematic evidence remain historical records.
 
-## Remaining gates
-
-1. Confirm contiguous 4×2 analog allocation and larger-project accounting. User-reported availability is 15 analog slots and 211 tiles; nothing is reserved.
-2. Validate actual TT switch/pad/package behavior, digital-activity coupling/noise, and final post-fill integration. RC tests currently assume external loads and cover the analog macro, not the whole-chip transient response.
-3. Prepare a separate SKY-specific repository/root metadata/workflow configuration and run remote physical and Docs checks at its exact commit.
-4. Validate the controller adapter and final carrier/board pin map, then characterize silicon. `host/diff8.py` is a protocol driver, not a validated complete board firmware package.
-
-No reservation, purchase, submission, publication, GitHub Pages action, or repository visibility change was performed.
+Remaining work is contiguous analog allocation, actual switch/package/board and controller validation, final shuttle/post-fill integration checks, and silicon characterization. No slot has been reserved, design submitted, purchase made, visibility changed, or Pages deployment enabled.

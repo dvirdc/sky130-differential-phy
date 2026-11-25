@@ -1,6 +1,8 @@
 # How it works
 
-A custom 1.8 V differential transmitter and receiver connect to a digital 8N1 byte transceiver. SPI registers control normal byte transfers or an on-chip pattern generator and independent receive checker. The initial target is 100 kbit/s from a 1.6 MHz system clock. The design occupies a 4x2 analog frame and uses four analog pins.
+A custom 1.8 V differential transmitter and receiver connect to a digital 8N1 byte transceiver. SPI registers control normal byte transfers or an on-chip pattern generator and independent receive checker. The initial target is 100 kbit/s from a 1.6 MHz system clock. The design occupies a 2x2 analog frame (four tiles) and uses four analog pins.
+
+The design retains the full 32-bit counter/register interface. Digital cells occupy 67.35% of the core space outside the analog macro; combined occupancy is 73.12%.
 
 This is a SKY26e candidate with verified local layout checks, not a submitted or fabricated design. It is not qualified as LVDS or RS-485. Analog models use assumed external loads; actual shuttle switches, package, board, noise coupling and post-fill integration still require validation.
 

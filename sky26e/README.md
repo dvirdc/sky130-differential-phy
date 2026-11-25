@@ -1,6 +1,6 @@
 # SKY26e differential byte transceiver
 
-This directory contains a locally checked SKY130 layout candidate. The repository root remains the preserved GF180 design and must not be submitted as SKY130. The candidate passes 17 prechecks, full transistor-level LVS, 44 routed digital tests and 30 extracted analog loopback cases; shuttle integration and board validation remain. See [the layout package](layout/README.md).
+This directory contains a locally checked SKY130 2×2 layout candidate (four tiles), retaining the full transceiver and 32-bit self-test counters. The development repository root remains preserved GF180 material; use the SKY-specific standalone repository for submission preparation. The candidate passes 17 prechecks, full exported-GDS transistor LVS, 44 routed digital tests, 30 extracted analog loopback cases and nine timing corners. See [the compact layout package](layout_compact/README.md); shuttle integration and board validation remain.
 
 ```mermaid
 flowchart LR

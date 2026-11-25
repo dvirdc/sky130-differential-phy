@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "tests": 44,
+  "scope": "External-pin regression of the actual routed, powered digital netlist.\n\nUniform 1 ns functional cell models; analog PHY uses the boundary model.\nThis is not SDF simulation or a transistor-level simulation of the whole chip.",
+  "inputs_sha256": {
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/physical/runs/compact_hold025/54-openroad-fillinsertion/tt_um_dvirdc_sky130_diff8.pnl.v": "c61ea74e8e8d832eb758bdfe485fc2fa9016898b8080b739a59014278b5f2ad2",
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/phy_behavioral.v": "c448b41f4f57cd394c28698d2eafdf50463935c678ecc0096d211604ec25b40d",
+    "/Users/dvirdc/Projects/sky130-phys/sky130-differential-phy-2x2/sky26e/sim/tb.sv": "fa19aa877851328db6d6eb3d49ff7fdcab9d4e63291117ff302d30b1da4c0daf",
+    "/Users/dvirdc/Projects/sky130-phys/toolchain/pdk/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v": "7d4b1441d06b0f2b9662befa675a0484d77149e04eb42a5f1fa2d4cfded7b2ce",
+    "/Users/dvirdc/Projects/sky130-phys/toolchain/pdk/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v": "12d5d6448ccf265c544d88402d5c10ab6de9bee8b8cde48eee1f31ea8c3c3e45"
+  }
+}

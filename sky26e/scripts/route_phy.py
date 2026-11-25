@@ -13,7 +13,7 @@ mos('xn1','nfet_01v8',24,1,'n1','rxn','tail','VGND');mos('xn2','nfet_01v8',24,1,
 mos('xp1','pfet_01v8',12,1,'n1','n1','VDPWR','VDPWR');mos('xp2','pfet_01v8',12,1,'pre','n1','VDPWR','VDPWR')
 for inst,l,a,b in [('xrp',28,'dp','txp'),('xrn',28,'dinb','txn'),('xrbp',1,'txp','cm'),('xrbn',1,'txn','cm'),('xrc1',20,'VDPWR','cm'),('xrc2',20,'cm','VGND'),('xrp2',28,'ap','txp'),('xrn2',28,'an','txn'),('xrt',20,'tail','VGND')]:DEV.append((inst,f'res_high_po_0p35_w0p35_l{l}',dict(R1=a,R2=b,B='VGND')))
 NETS=sorted({v for _,_,pins in DEV for v in pins.values()}-{'VDPWR','VGND'})+['VDPWR','VGND']
-LOW={n:15+1.6*i for i,n in enumerate(NETS)};HIGH={n:112+1.6*i for i,n in enumerate(NETS)}
+LOW={n:10+.8*i for i,n in enumerate(NETS)};HIGH={n:66+.8*i for i,n in enumerate(NETS)}
 records={};instances=[];access=[]
 def rect(layer,x1,y1,x2,y2):
  r=tuple(round(z*200) for z in (min(x1,x2),min(y1,y2),max(x1,x2),max(y1,y2)))
@@ -48,7 +48,7 @@ def cell(name):
  (OUT/(name+'.mag')).write_text(s)
  return geom,labels,bbox
 for i,(inst,name,pins) in enumerate(DEV):
- cx,cy=12+7.6*i,78
+ cx,cy=12+4.4*i,46
  geom,labels,bbox=cell(name);instances.append((inst,name,cx,cy,bbox))
  guards=[r for layer,rs in geom.items() if layer in ('psubdiffcont','nsubdiffcont') for r in rs if r[0]>0 and r[3]-r[1]>.5]
  g=max(guards,key=lambda r:r[3]-r[1]);body=((g[0]+g[2])/2,0)
@@ -67,20 +67,20 @@ for i,(inst,name,pins) in enumerate(DEV):
   wire('metal2',x,y,x,ty,.14);via(2,x,ty)
   access.append(dict(instance=inst,pin=pin,net=net,x=x,y=y,track_y=ty))
 for i,net in enumerate(NETS):
- x=2+1.6*i
- for y in [LOW[net],HIGH[net]]:wire('metal3',2,y,236,y,.4);via(3,x,y)
+ x=2+.8*i
+ for y in [LOW[net],HIGH[net]]:wire('metal3',2,y,136,y,.4);via(3,x,y)
  wire('metal4',x,LOW[net],x,HIGH[net],.4)
 ports=['din','boost','rxp','rxn','txp','txn','dout','VDPWR','VGND']
 labels='<< labels >>\n'
 for i,net in enumerate(ports):
- y=HIGH[net];x=235
+ y=HIGH[net];x=135
  labels+=f'rlabel metal3 {round((x-.5)*200)} {round((y-.2)*200)} {round((x+.5)*200)} {round((y+.2)*200)} 0 {net}\nport {i+1} nsew '+('power bidirectional' if net=='VDPWR' else 'ground bidirectional' if net=='VGND' else 'signal output' if net in ['txp','txn','dout'] else 'signal input')+'\n'
 text='magic\ntech sky130A\nmagscale 1 2\ntimestamp 0\n'
 for layer,rs in records.items():text+='<< '+layer+' >>\n'+''.join('rect '+' '.join(map(str,r))+'\n' for r in rs)
 for inst,name,x,y,bbox in instances:text+=f'use {name} {inst}\ntimestamp 0\ntransform 1 0 {round(x*200)} 0 1 {round(y*200)}\nbox '+' '.join(str(round(z*200)) for z in bbox)+'\n'
-text+=labels+'<< properties >>\nstring FIXED_BBOX 0 0 48000 32000\n<< end >>\n'
+text+=labels+'<< properties >>\nstring FIXED_BBOX 0 0 28000 18000\n<< end >>\n'
 (OUT/(TOP+'.mag')).write_text(text)
-(OUT/'routing.json').write_text(json.dumps({'nets':NETS,'access':access,'ports':ports,'bbox_um':[0,0,240,160]},indent=2)+'\n')
+(OUT/'routing.json').write_text(json.dumps({'nets':NETS,'access':access,'ports':ports,'bbox_um':[0,0,140,90]},indent=2)+'\n')
 cmd=f"""load {TOP} -silent
 select top cell
 drc check

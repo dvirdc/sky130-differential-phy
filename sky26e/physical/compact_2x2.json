@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "version": 2,
+    "flow": "Classic"
+  },
+  "DESIGN_NAME": "tt_um_dvirdc_sky130_diff8",
+  "VERILOG_FILES": [
+    "dir::../rtl/diff8_uart_tx.v",
+    "dir::../rtl/diff8_uart_rx.v",
+    "dir::../rtl/diff8_digital.v",
+    "dir::../rtl/tt_um_dvirdc_sky130_diff8.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 625,
+  "VDD_NETS": [
+    "VDPWR"
+  ],
+  "GND_NETS": [
+    "VGND"
+  ],
+  "FP_SIZING": "absolute",
+  "DIE_AREA": [
+    0,
+    0,
+    334.88,
+    225.76
+  ],
+  "FP_DEF_TEMPLATE": "dir::tt_analog_2x2.def",
+  "PL_TARGET_DENSITY_PCT": 75,
+  "RT_MAX_LAYER": "met4",
+  "FP_PDN_MULTILAYER": false,
+  "FP_PDN_HORIZONTAL_LAYER": "met3",
+  "FP_PDN_VERTICAL_LAYER": "met4",
+  "FP_PDN_VPITCH": 40,
+  "FP_PDN_VOFFSET": 10,
+  "FP_PDN_VWIDTH": 1.6,
+  "BOTTOM_MARGIN_MULT": 1,
+  "TOP_MARGIN_MULT": 1,
+  "PNR_SDC_FILE": "dir::integrated.sdc",
+  "SIGNOFF_SDC_FILE": "dir::signoff.sdc",
+  "MACROS": {
+    "sky130_diff_phy": {
+      "gds": [
+        "dir::../build/physical/phy-v2/sky130_diff_phy.gds"
+      ],
+      "lef": [
+        "dir::../build/physical/phy-v2/sky130_diff_phy.lef"
+      ],
+      "vh": [
+        "dir::../rtl/sky130_diff_phy_blackbox.v"
+      ],
+      "spice": [
+        "dir::phy_reference.spice"
+      ],
+      "instances": {
+        "phy": {
+          "location": [
+            185,
+            90
+          ],
+          "orientation": "N"
+        }
+      }
+    }
+  },
+  "PDN_MACRO_CONNECTIONS": [
+    "phy VDPWR VGND VDPWR VGND"
+  ],
+  "MAGICRC": "dir::magicrc",
+  "MAGIC_EXT_USE_GDS": true,
+  "DRT_ANTENNA_REPAIR_ITERS": 3,
+  "RUN_POST_GRT_DESIGN_REPAIR": true,
+  "RUN_POST_GRT_RESIZER_TIMING": true,
+  "GRT_DESIGN_REPAIR_MAX_SLEW_PCT": 30,
+  "GRT_DESIGN_REPAIR_MAX_CAP_PCT": 30,
+  "MAX_SLEW_VIOLATION_CORNERS": [
+    "nom_tt_025C_1v80",
+    "nom_ss_100C_1v60",
+    "nom_ff_n40C_1v95",
+    "min_tt_025C_1v80",
+    "min_ss_100C_1v60",
+    "min_ff_n40C_1v95",
+    "max_tt_025C_1v80",
+    "max_ss_100C_1v60",
+    "max_ff_n40C_1v95"
+  ],
+  "MAX_CAP_VIOLATION_CORNERS": [
+    "nom_tt_025C_1v80",
+    "nom_ss_100C_1v60",
+    "nom_ff_n40C_1v95",
+    "min_tt_025C_1v80",
+    "min_ss_100C_1v60",
+    "min_ff_n40C_1v95",
+    "max_tt_025C_1v80",
+    "max_ss_100C_1v60",
+    "max_ff_n40C_1v95"
+  ],
+  "EXTRA_SPICE_MODELS": [
+    "dir::phy_reference.spice"
+  ],
+  "RSZ_CORNERS": [
+    "max_ss_100C_1v60",
+    "max_tt_025C_1v80",
+    "max_ff_n40C_1v95"
+  ],
+  "FP_MACRO_HORIZONTAL_HALO": 4,
+  "FP_MACRO_VERTICAL_HALO": 4,
+  "GRT_ADJUSTMENT": 0,
+  "GRT_OVERFLOW_ITERS": 200
+}
